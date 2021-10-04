@@ -3,7 +3,7 @@ export default {
     {
       name: "sanity-tutorials",
       options: {
-        templateRepoId: "sanity-io/sanity-template-nextjs-commencestarter",
+        templateRepoId: "lmnts-dev/sanity-template-nextjs-commencestarter",
       },
     },
     { name: "structure-menu" },

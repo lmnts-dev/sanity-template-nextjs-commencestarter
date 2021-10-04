@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sanity-io/sanity-template-nextjs-commencestarter.git"
+    "url": "git+https://github.com/lmnts-dev/sanity-template-nextjs-commencestarter.git"
   },
   "dependencies": {
     "@sanity/block-content-to-react": "^3.0.0",
@@ -56,7 +56,7 @@
   "author": "Sanity.io <hello@sanity.io>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sanity-io/sanity-template-nextjs-commencestarter/issues"
+    "url": "https://github.com/lmnts-dev/sanity-template-nextjs-commencestarter/issues"
   },
-  "homepage": "https://github.com/sanity-io/sanity-template-nextjs-commencestarter#readme"
+  "homepage": "https://github.com/lmnts-dev/sanity-template-nextjs-commencestarter#readme"
 }
