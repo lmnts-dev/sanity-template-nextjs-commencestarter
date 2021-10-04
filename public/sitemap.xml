@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>undefined</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-09-30T08:28:49.995Z</lastmod></url>
+<url><loc>undefined/blog</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-09-30T08:28:49.995Z</lastmod></url>
+<url><loc>undefined/blog/category</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-09-30T08:28:49.995Z</lastmod></url>
+<url><loc>undefined/blog/styles.scss</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-09-30T08:28:49.995Z</lastmod></url>
+<url><loc>undefined/quiz</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-09-30T08:28:49.995Z</lastmod></url>
+<url><loc>undefined/all-sections</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-09-30T08:28:49.995Z</lastmod></url>
+<url><loc>undefined/test</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-09-30T08:28:49.995Z</lastmod></url>
+<url><loc>undefined/single-section</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-09-30T08:28:49.995Z</lastmod></url>
+<url><loc>undefined/blog/category/shopify</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-09-30T08:28:49.995Z</lastmod></url>
+</urlset>

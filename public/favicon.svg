@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="13" height="12"><svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 0C2.7 0 0 2.7 0 6C0 9.3 2.7 12 6 12C9.3 12 12 9.3 12 6C12.1 2.7 9.4 0 6 0ZM7.4 6.1C7.4 6.4 7.3 6.7 7 7C6.8 7.2 6.5 7.3 6.3 7.3H6.2H6.1H5.8C5.5 7.4 5.2 7.2 5 7C4.8 6.8 4.7 6.5 4.7 6.1C4.7 5.8 4.8 5.6 5 5.2C5.2 4.8 5.6 4.7 6 4.7H6.2C6.5 4.7 6.7 4.8 7 5C7.3 5.2 7.4 5.5 7.4 5.9V6.1Z" fill="black"></path>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: invert(100%); } }
+</style></svg>
