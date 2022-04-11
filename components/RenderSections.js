@@ -6,6 +6,7 @@ import { AccordionListings } from "../sections/loop/AccordionListings";
 import { BlogTeaser } from "../sections/loop/ BlogTeaser";
 import { Quote } from "../sections/loop/Quote";
 import { CenteredText } from "../sections/loop/CenteredText";
+import { AnimatedHeadline } from "../sections/loop/AnimatedHeadline";
 import { ColumnContent } from "../sections/loop/ColumnContent";
 import { ContactForm } from "../sections/loop/ContactForm";
 import { FullWidthImage } from "../sections/loop/FullWidthImage";
@@ -24,10 +25,25 @@ import { StickySection } from "../sections/loop/StickySection";
 import { TextOverImage } from "../sections/loop/TextOverImage";
 import { VideoRow } from "../sections/loop/VideoRow";
 import { WysiwygSection } from "../sections/loop/WysiwygSection";
+import { BarGraphs } from "../sections/loop/BarGraphs";
+import { BlockQuote } from "../sections/loop/BlockQuote";
+import { LineGraph } from "../sections/loop/LineGraph";
+import { SimpleHero } from "../sections/loop/SimpleHero";
+import { SplitSection } from "../sections/loop/SplitSection";
+import { SplitText } from "../sections/loop/SplitText";
+import { TeamGrid } from "../sections/loop/TeamGrid";
+import { TextSlider } from "../sections/loop/TextSlider";
+import { AnimatedStats } from "../sections/loop/AnimatedStats";
+import { HomepageHero } from "../sections/loop/HomepageHero";
+import { NumberedSlider } from "../sections/loop/NumberedSlider";
 
 let SectionComponents = [
   QuoteHero,
+  AnimatedHeadline,
   AccordionListings,
+  AnimatedStats,
+  BarGraphs,
+  BlockQuote,
   BlogTeaser,
   Quote,
   CenteredText,
@@ -36,16 +52,24 @@ let SectionComponents = [
   FullWidthImage,
   GridCardListings,
   GridRow,
+  HomepageHero,
   Headline,
   ImageCollage,
+  LineGraph,
   LogosRow,
   MarqueeRow,
   NextGuide,
+  NumberedSlider,
   OverlapHero,
   QuoteSlider,
   SectionBreak,
+  SimpleHero,
+  SplitSection,
+  SplitText,
   StatementHero,
   StickySection,
+  TeamGrid,
+  TextSlider,
   TextOverImage,
   VideoRow,
   WysiwygSection,
@@ -100,3 +124,4 @@ RenderSections.propTypes = {
 };
 
 export default RenderSections;
+

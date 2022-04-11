@@ -32,6 +32,21 @@ import { QuoteSliderRegistry } from "./QuoteSlider";
 import { AccordionsRegistry } from "./Accordions";
 import { ContactFormRegistry } from "./ContactForm";
 import { OverlapHeroRegistry } from "./OverlapHero";
+import { AnimatedHeadlineRegistry } from "./AnimatedHeadline";
+import { BarGraphsRegistry } from "./BarGraphs";
+import { BlockQuoteRegistry } from "./BlockQuote";
+import { LineGraphRegistry } from "./LineGraph";
+import { SimpleHeroRegistry } from "./SimpleHero";
+import { SplitSection } from "./SplitSection";
+import { SplitTextRegistry } from "./SplitText";
+import { TeamGrid } from "./TeamGrid";
+import { TextSliderRegistry } from "./TextSlider";
+import { AnimatedStats } from "./AnimatedStats";
+import { HomepageHeroRegistry } from "./HomepageHero";
+import { NumberedSliderRegistry } from "./NumberedSlider";
+
+
+
 
 // __________________________________________________________________________________________
 
@@ -53,6 +68,7 @@ export const SectionRegistry = (includeSections, excludeSections) => {
   let defaultSections = [
     //Text
     { type: AccordionsRegistry.name },
+    { type: AnimatedStats.name },
     { type: CenteredTextRegistry.name },
     { type: ColumnContentRegistry.name },
     { type: HeadlineRegistry.name },
@@ -63,6 +79,11 @@ export const SectionRegistry = (includeSections, excludeSections) => {
     { type: SectionBreakRegistry.name },
     { type: StatementHeroRegistry.name },
     { type: WysiwygSectionRegistry.name },
+    { type: AnimatedHeadlineRegistry.name },
+    { type: BlockQuoteRegistry.name },
+    { type: SplitTextRegistry.name },
+    { type: TextSliderRegistry.name },
+    { type: NumberedSliderRegistry.name},
 
     //Image
     { type: GridCardListingsRegistry.name },
@@ -74,6 +95,13 @@ export const SectionRegistry = (includeSections, excludeSections) => {
     { type: TextOverImageRegistry.name },
     { type: VideoRowRegistry.name },
     { type: OverlapHeroRegistry.name },
+    { type: BarGraphsRegistry.name },
+    { type: LineGraphRegistry.name },
+    { type: SimpleHeroRegistry.name},
+    { type: SplitSection.name },
+    { type: TeamGrid.name },
+    { type: HomepageHeroRegistry.name },
+,    
 
     //Blog
     { type: BlogTeaserRegistry.name },
@@ -148,3 +176,4 @@ export const SectionRegistry = (includeSections, excludeSections) => {
     return defaultSections;
   }
 };
+

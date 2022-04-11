@@ -59,3 +59,37 @@ export const ImageAltTextReq = [
     validation: (Rule) => Rule.required(),
   },
 ];
+
+export const Image2 = (
+  required = false,
+  description = undefined,
+  title = "Image",
+  name = "image"
+) => {
+  return [
+    {
+      title: title,
+      name: name,
+      description: description,
+      validation: (validate) => (required ? validate.required() : validate),
+      type: "image",
+    },
+  ];
+};
+
+export const ImageAltText2 = (
+  required = false,
+  description = undefined,
+  title = "Image Alt Text",
+  name = "alt"
+) => {
+  return [
+    {
+      title: title,
+      name: name,
+      description: description,
+      validation: (validate) => (required ? validate.required() : validate),
+      type: "string",
+    },
+  ];
+};

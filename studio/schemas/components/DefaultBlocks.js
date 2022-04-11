@@ -316,6 +316,80 @@ export const BlockStandardImage = (
   ];
 };
 
+/* For simple functionality only like inline linking and bolding */
+
+export const BlockSimple = (
+  required = false,
+  description = undefined,
+  title = "Content",
+  name = "blockSimple"
+) => {
+  return [
+    {
+      title: title,
+      name: name,
+      description: description,
+      validation: (validate) => (required ? validate.required() : validate),
+      type: "array",
+      of: [
+        {
+          type: "block",
+          // Only allow these block styles
+          lists: [],
+          styles: [{ title: "Normal", value: "normal" }],
+          marks: {
+            // Only allow these decorators
+            decorators: [
+              { title: "Strong", value: "strong" },
+              { title: "Emphasis", value: "em" },
+              { title: "Underline", value: "underline" },
+              { title: "Strike", value: "strike-through" },
+            ],
+            annotations: [ {
+                name: "internalLink",
+                type: "object",
+                title: "Internal link",
+                fields: [
+                  {
+                    name: "reference",
+                    type: "reference",
+                    title: "Reference",
+                    to: [
+                      { type: "page" },
+                      { type: "article" },
+                      { type: "articleCategory" },
+                      // other types you may want to link to
+                    ],
+                  },
+                ],
+              },
+              {
+                name: "link",
+                type: "object",
+                title: "External link",
+                fields: [
+                  {
+                    name: "href",
+                    type: "url",
+                    title: "URL",
+                  },
+                  {
+                    title: "Open in new tab",
+                    name: "blank",
+                    description:
+                      "Read https://css-tricks.com/use-target_blank/",
+                    type: "boolean",
+                  },
+                ],
+              },
+            ],
+          },
+        },
+      ],
+    },
+  ];
+};
+
 /* For all available functionality plus images */
 export const BlockAdvanced = (
   required = false,

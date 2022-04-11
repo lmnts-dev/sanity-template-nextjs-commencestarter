@@ -13,6 +13,7 @@ import { QuoteHero } from "./sections/QuoteHero";
 import { Accordions } from "./sections/Accordions";
 import { Quote } from "./sections/Quote";
 import { CenteredText } from "./sections/CenteredText";
+import { AnimatedHeadline } from "./sections/AnimatedHeadline";
 import { ColumnContent } from "./sections/ColumnContent";
 import { FullWidthImage } from "./sections/FullWidthImage";
 import { GridRow } from "./sections/GridRow";
@@ -32,6 +33,18 @@ import { LogosRow } from "./sections/LogosRow";
 import { QuoteSlider } from "./sections/QuoteSlider";
 import { ContactForm } from "./sections/ContactForm";
 import { OverlapHero } from "./sections/OverlapHero";
+import { BarGraphs } from "./sections/BarGraphs";
+import { BlockQuote } from "./sections/BlockQuote";
+import { LineGraph } from "./sections/LineGraph";
+import { SimpleHero } from "./sections/SimpleHero";
+import { SplitSection } from "./sections/SplitSection";
+import { SplitText } from "./sections/SplitText";
+import { TeamGrid } from "./sections/TeamGrid";
+import { TextSlider } from "./sections/TextSlider";
+import { AnimatedStats } from "./sections/AnimatedStats";
+import { HomepageHero } from "./sections/HomepageHero";
+import { NumberedSlider } from "./sections/NumberedSlider";
+
 
 import footer from "./sections/footer";
 import navigation from "./sections/navigation";
@@ -48,6 +61,7 @@ import answer from "./documents/answer";
 import result from "./documents/result";
 import question from "./documents/question";
 
+
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -56,7 +70,10 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     QuoteHero,
+    AnimatedHeadline,
+    AnimatedStats,
     Quote,
+    BlockQuote,
     CenteredText,
     ColumnContent,
     GridRow,
@@ -64,6 +81,14 @@ export default createSchema({
     GridCardListings,
     MarqueeRow,
     TextOverImage,
+    BarGraphs,
+    HomepageHero,
+    LineGraph,
+    SimpleHero,
+    SplitSection,
+    SplitText,
+    TeamGrid,
+    TextSlider,
     NextGuide,
     SectionBreak,
     ImageCollage,
@@ -73,6 +98,7 @@ export default createSchema({
     FullWidthImage,
     StatementHero,
     BlogTeaser,
+    NumberedSlider,
     LogosRow,
     QuoteSlider,
     Accordions,
@@ -94,3 +120,4 @@ export default createSchema({
     question,
   ]),
 });
+

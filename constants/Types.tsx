@@ -109,6 +109,8 @@ export type CMNC_PageData = {
 export type CMNC_ScrollDirection = "top" | "down" | "up";
 
 export type CMNC_SectionTheme = "tan" | "default" | "dark" | "light";
+export type CMNC_SectionAccent = "mustard" | "yellow" | "light-blue";
+
 
 export type CMNC_AddStickyHeader = {
   sticky_header?: CMNC_StickyHeader;
