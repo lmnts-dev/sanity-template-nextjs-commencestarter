@@ -33,19 +33,17 @@ import { AccordionsRegistry } from "./Accordions";
 import { ContactFormRegistry } from "./ContactForm";
 import { OverlapHeroRegistry } from "./OverlapHero";
 import { AnimatedHeadlineRegistry } from "./AnimatedHeadline";
-import { BarGraphsRegistry } from "./BarGraphs";
 import { BlockQuoteRegistry } from "./BlockQuote";
+import { SplitTextRegistry } from "./SplitText";
+import { TextSliderRegistry } from "./TextSlider";
+import { NumberedSliderRegistry } from "./NumberedSlider";
+import { BarGraphsRegistry } from "./BarGraphs";
 import { LineGraphRegistry } from "./LineGraph";
 import { SimpleHeroRegistry } from "./SimpleHero";
-import { SplitSection } from "./SplitSection";
-import { SplitTextRegistry } from "./SplitText";
-import { TeamGrid } from "./TeamGrid";
-import { TextSliderRegistry } from "./TextSlider";
-import { AnimatedStats } from "./AnimatedStats";
+import { SplitSectionRegistry } from "./SplitSection";
+import { TeamGridRegistry } from "./TeamGrid";
 import { HomepageHeroRegistry } from "./HomepageHero";
-import { NumberedSliderRegistry } from "./NumberedSlider";
-
-
+import { AnimatedStatsRegistry } from "./AnimatedStats";
 
 
 // __________________________________________________________________________________________
@@ -68,7 +66,7 @@ export const SectionRegistry = (includeSections, excludeSections) => {
   let defaultSections = [
     //Text
     { type: AccordionsRegistry.name },
-    { type: AnimatedStats.name },
+    { type: AnimatedStatsRegistry.name },
     { type: CenteredTextRegistry.name },
     { type: ColumnContentRegistry.name },
     { type: HeadlineRegistry.name },
@@ -98,10 +96,9 @@ export const SectionRegistry = (includeSections, excludeSections) => {
     { type: BarGraphsRegistry.name },
     { type: LineGraphRegistry.name },
     { type: SimpleHeroRegistry.name},
-    { type: SplitSection.name },
-    { type: TeamGrid.name },
+    { type: SplitSectionRegistry.name },
+    { type: TeamGridRegistry.name },
     { type: HomepageHeroRegistry.name },
-,    
 
     //Blog
     { type: BlogTeaserRegistry.name },
@@ -176,4 +173,3 @@ export const SectionRegistry = (includeSections, excludeSections) => {
     return defaultSections;
   }
 };
-

@@ -34,7 +34,7 @@ import { SplitText } from "../sections/loop/SplitText";
 import { TeamGrid } from "../sections/loop/TeamGrid";
 import { TextSlider } from "../sections/loop/TextSlider";
 import { AnimatedStats } from "../sections/loop/AnimatedStats";
-import { HomepageHero } from "../sections/loop/HomepageHero";
+import { HomepageHero } from "../sections/loop/HomepageHero ";
 import { NumberedSlider } from "../sections/loop/NumberedSlider";
 
 let SectionComponents = [

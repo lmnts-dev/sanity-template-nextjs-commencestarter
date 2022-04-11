@@ -53,6 +53,11 @@ interface Root {
       Y: string;
     };
 
+    Indent2: {
+      Left: string;
+      Right: string;
+    };
+
     Section: string;
   };
 
@@ -108,6 +113,11 @@ export const Root: Root = {
     Indent: {
       X: "var(--IndentX)",
       Y: "var(--IndentY)",
+    },
+
+    Indent2: {
+      Left: "var(--IndentLeft)",
+      Right: "var(--IndentRight)",
     },
 
     Section: "var(--SectionTop)",

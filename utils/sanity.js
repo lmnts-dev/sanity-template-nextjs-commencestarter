@@ -67,6 +67,66 @@ export const PortableText = createPortableTextComponent({
   },
 });
 
+//Serializers for customization to our PortableText component
+export const linkSerializers = {
+  marks: {
+    internalLink: ({ mark: { reference, button }, children }) => {
+      const href = `${generatePath(reference)}`;
+
+      return (
+        <a href={href} className={button ? "btn __btn-underline" : ""}>
+          {children}
+        </a>
+      );
+    },
+
+    link: ({ mark, children }) => {
+      // Read https://css-tricks.com/use-target_blank/
+      const { blank, href, button } = mark;
+      return blank ? (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener"
+          className={button ? "btn __btn-underline" : ""}
+        >
+          {children}
+        </a>
+      ) : (
+        <a href={href} className={button ? "btn __btn-underline" : ""}>
+          {children}
+        </a>
+      );
+    },
+  },
+};
+
+export const h1WithLinksSerializers = {
+  linkSerializers,
+  types: {
+    block: (props) => {
+      let { style } = props.node;
+      if (style == "normal") {
+        return <h1>{props.children}</h1>;
+      }
+      return null;
+    },
+  },
+};
+
+export const h2WithLinksSerializers = {
+  linkSerializers,
+  types: {
+    block: (props) => {
+      let { style } = props.node;
+      if (style == "normal") {
+        return <h2>{props.children}</h2>;
+      }
+      return null;
+    },
+  },
+};
+
 // Set up the client for fetching data in the getProps page functions
 export const sanityClient = createClient(config);
 // Set up a preview client with serverless authentication for drafts
@@ -79,3 +139,4 @@ export const previewClient = createClient({
 // Helper function for easily switching between normal client and preview client
 export const getClient = (usePreview) =>
   usePreview ? previewClient : sanityClient;
+

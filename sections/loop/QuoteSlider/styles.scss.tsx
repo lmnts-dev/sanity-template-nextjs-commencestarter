@@ -18,6 +18,7 @@ import { Root } from "../../../constants/Root";
 
 // Utils
 import { Color } from "../../../constants/styles/Color";
+import { CssUtils } from "../../../constants/styles/CssUtils";
 
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
@@ -104,5 +105,53 @@ export const QuoteSliderStyle = styled.section`
   }
 
   @media (max-width: ${Theme.Base.Media.Width.Sm}) {
+  }
+`;
+
+export const SliderArrow = styled.div`
+  width: var(--ArrowWidth);
+  height: calc( var(--ArrowWidth) / 2);
+  display: grid;
+  place-items: center;
+
+  &:before {
+    content: "";
+    ${CssUtils.Cover};
+    background: ${Color.varBackground()};
+  }
+
+  &.slick-prev {
+    transform: scaleX(-1);
+    z-index: 2;
+  }
+
+  &.slick-next {
+    transform: none;
+  }
+
+  &.slick-disabled {
+    display: none;
+  }
+
+  &:hover {
+    svg {
+      * {
+        fill: ${Color.varBackground()};
+      }
+    }
+
+    &:before {
+      background: ${Color.varForeground()};
+    }
+  }
+
+  svg {
+    position: relative;
+    width: 60%;
+    height: auto;
+
+    * {
+      fill: ${Color.varForeground()};
+    }
   }
 `;

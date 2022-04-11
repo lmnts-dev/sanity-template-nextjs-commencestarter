@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://commence-starter.vercel.app/
+Host: undefined
 
 # Sitemaps
-Sitemap: https://commence-starter.vercel.app/sitemap.xml
+Sitemap: undefined/sitemap.xml

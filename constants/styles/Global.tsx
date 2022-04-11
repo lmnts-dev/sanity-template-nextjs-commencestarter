@@ -10,7 +10,7 @@
 
 // Core
 import React from "react";
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, css, keyframes } from "styled-components";
 
 // Styles
 import { Font, Typography } from "./Font";
@@ -780,6 +780,83 @@ const Reset = createGlobalStyle`
       transform: scaleX(1);
       transform-origin: left center;
     }
+  }
+`;
+
+export const animationVisibilityClass = "__visible";
+
+export const RevealBtnInitialStyles = `
+  color: transparent;
+  transform: scaleY(0);
+  transform-origin: bottom left;
+`;
+
+export const RevealBtn = keyframes`
+  0% {
+    ${RevealBtnInitialStyles}
+  }
+  50% {
+    color: transparent;
+    transform: scaleY(1);
+          
+  } 100% {
+    transform: scaleY(1);
+    color: ${Color.varAccent()};
+  }
+`;
+
+
+export const RevealDownInitialStyles = `
+  transform: scaleY(0);
+  transform-origin: top center;
+`;
+
+export const RevealDown = keyframes`
+  from {
+    ${RevealDownInitialStyles}
+  }
+  to {
+    transform: scaleY(1);
+  }
+`;
+
+export const SlideUpInitialStyles = `
+  transform: translateY(50%);
+  opacity: 0;
+`;
+
+export const SlideUp = keyframes`
+  from {
+    ${SlideUpInitialStyles}
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+`;
+
+export const activeSlideImageDefaultStyles = css`
+  opacity: 0;
+  z-index: 0;
+`;
+
+export const previousSlideImageStyles = css`
+  z-index: 1;
+  opacity: 1;
+`;
+
+export const activeSlideImage = keyframes`
+  0% {
+    z-index: 3;
+    opacity: 0;
+  }
+  50% {
+    z-index: 3;
+    opacity: 1;
+  }
+  100% {
+    z-index: 2;
+    opacity: 1;
   }
 `;
 

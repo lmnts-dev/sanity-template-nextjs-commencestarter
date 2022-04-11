@@ -44,6 +44,46 @@ export class CssUtils {
     `;
   };
 
+ static ImageShow = () => {
+    return css`
+      img {
+        will-change: transform, opacity;
+        transition: all 0.75s ease;
+        transform: scale(1);
+        opacity: 0.9;
+      }
+
+      &.__visible {
+        img {
+          transform: scale(1.05);
+          opacity: 1;
+        }
+      }
+    `;
+  };
+
+  static OverlayPseudos = () => {
+    return css`
+      &:after,
+      &:before {
+        content: "";
+        ${CssUtils.Cover};
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      &:after {
+        background: ${Color.varBackground()};
+        mix-blend-mode: color;
+      }
+
+      &:before {
+        background: ${Color.varOverlay};
+        opacity: 0.2;
+      }
+    `;
+  };
+
   static NavAwareSubNav = () => {
     return css`
       top: ${Root.Nav.Size};

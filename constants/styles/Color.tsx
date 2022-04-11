@@ -75,6 +75,8 @@ export const Color = {
 
   // Applied Palette
   Placeholder: "var(--placeholder)",
+  varForegroundOverlay: "var(--foregroundOverlay)",
+    varOverlay: "var(--overlay)",
 };
 
 export class ColorUtils {
