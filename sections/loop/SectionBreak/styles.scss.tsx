@@ -22,17 +22,16 @@ import { Color } from "../../../constants/styles/Color";
 export const SectionBreakStyle = styled.section`
   position: relative;
   width: 100%;
+  height: 1px;
 
   &:before {
     content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    position: relative;
+    display: block;
     background: ${Color.varForeground()};
     height: 1px;
     opacity: 0.15;
+    width: 100%;
   }
 
   &.__style-bold:before {

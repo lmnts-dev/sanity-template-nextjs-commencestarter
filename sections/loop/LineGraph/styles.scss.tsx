@@ -37,6 +37,7 @@ export const LineGraphStyle = styled.section`
       right: 0;
       width: 30%;
       text-align: center;
+      z-index:10;
 
       &__headline {
         padding-bottom: calc(${Root.Size} / 8);
