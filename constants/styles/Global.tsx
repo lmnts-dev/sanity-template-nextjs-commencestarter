@@ -825,6 +825,11 @@ export const SlideUpInitialStyles = `
   opacity: 0;
 `;
 
+export const LockBody = createGlobalStyle`
+  body {
+    overflow: hidden !important;
+}`;
+
 export const SlideUp = keyframes`
   from {
     ${SlideUpInitialStyles}

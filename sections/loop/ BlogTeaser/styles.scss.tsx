@@ -13,7 +13,7 @@ import { ProjectCardClassName } from "../../../components/lib/ProjectCard/styles
 import { Root } from "../../../constants/Root";
 import { Color, Palette } from "../../../constants/styles/Color";
 import { Theme } from "../../../constants/Theme";
-import { MarqueeClassName } from "../MarqueeRow";
+//import { MarqueeClassName } from "../MarqueeRow";
 
 // Constants
 
@@ -52,6 +52,7 @@ export const  BlogTeaserStyle = styled.section`
       top: 0;
       bottom: 0;
       right: 0;
+      left: auto;
       background: linear-gradient(to right, ${Color.varBackground("transparent")}, ${Color.varBackground()}, ${Color.varBackground()});
       z-index: 2;
     }
@@ -61,8 +62,8 @@ export const  BlogTeaserStyle = styled.section`
       --caratHeight: calc(${Root.Size} / 1.5);
       --caratSize: calc(var(--caratHeight) / 5);
       position: absolute;
-      top: calc(calc(var(--blogTeaserMarqueeHeight) * 3) + calc(${Root.Size} * 2));
-      left: ${Root.Grid.Gutter.Left};
+      top: calc(calc(var(--blogTeaserMarqueeHeight) * 4) + calc(${Root.Size} * 2));
+      left: calc(${Root.Grid.Gutter.Left} * 2);
       color: ${Color.varAccent()};
       z-index: 3;
 
@@ -87,6 +88,10 @@ export const  BlogTeaserStyle = styled.section`
           margin-left: var(--IndentX);
     }
 
+    .flickity-prev-next-button{
+      z-index:5;
+    }
+
     .${ BlogTeaserClassName}__articles {
       display: flex;
       position: relative;
@@ -100,13 +105,13 @@ export const  BlogTeaserStyle = styled.section`
         padding-right: calc(var(--Size) / 3);
 
           a{
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 2;
-    }
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+          }
 
         .${ProjectCardClassName} {
           width: 100%;
@@ -115,7 +120,7 @@ export const  BlogTeaserStyle = styled.section`
       }
     }
 
-    .${MarqueeClassName} {
+    .marquee-row {
       height: var(--blogTeaserMarqueeHeight);
       z-index: 4;
       mix-blend-mode: exclusion;
@@ -151,7 +156,6 @@ export const  BlogTeaserStyle = styled.section`
   &.${ BlogTeaserClassName} {
         .${ BlogTeaserClassName}__articles {
       &__card-container {
-            
         width: 55vw;
       }
     }
@@ -163,7 +167,6 @@ export const  BlogTeaserStyle = styled.section`
         top: auto;
         bottom: auto;
         left: auto;
-        
       }
     }
   }

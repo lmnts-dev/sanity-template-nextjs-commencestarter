@@ -44,6 +44,7 @@ import { TextSlider } from "./sections/TextSlider";
 import { AnimatedStats } from "./sections/AnimatedStats";
 import { HomepageHero } from "./sections/HomepageHero";
 import { NumberedSlider } from "./sections/NumberedSlider";
+import { SolutionsAccordions } from "./sections/SolutionsAccordions";
 
 
 import footer from "./sections/footer";
@@ -60,7 +61,8 @@ import quiz from "./documents/quiz";
 import answer from "./documents/answer";
 import result from "./documents/result";
 import question from "./documents/question";
-
+import { SolutionsLinkListings } from "./sections/SolutionsLinkListings";
+import { FaqListings } from "./sections/FaqListings";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -91,6 +93,8 @@ export default createSchema({
     TextSlider,
     NextGuide,
     SectionBreak,
+    SolutionsAccordions,
+    SolutionsLinkListings,
     ImageCollage,
     VideoRow,
     WysiwygSection,
@@ -104,6 +108,7 @@ export default createSchema({
     Accordions,
     ContactForm,
     OverlapHero,
+    FaqListings,
     article,
     blog,
     articleCategory,

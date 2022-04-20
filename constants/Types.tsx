@@ -152,6 +152,33 @@ export type CMNC_SectionSpacing = {
 
 /**
  *
+ * @description Service
+ *
+ */
+
+export type CMNC_Service = CMNC_DefaultSanityProps &
+  CMNC_PageBasics & {
+    _type: "service";
+    image: CMNC_Image;
+    features?: string[];
+    shortDescription?: string;
+    regDescription?: string;
+    content: any; //Section loop
+    //__document: CMNC_CurrentService;
+    //seo?: CMNC_SEO;
+};
+
+export type CMNC_Feature = CMNC_DefaultSanityProps & {
+  _type: "feature";
+  title: string;
+  blockBasic: any;
+  aspects?: string[];
+  content?: any; //Section loop
+};
+  
+
+/**
+ *
  * @description Blog
  *
  */
@@ -178,13 +205,31 @@ export type CMNC_Article = CMNC_DefaultSanityProps &
     content: any; //Section loop
     author: CMNC_Author;
     tags?: string[];
-  };
+};
+
 
 export type CMNC_ArticleSimple = CMNC_PageBasics & {
   image: CMNC_Image;
 };
 
 export type CMNC_Category = CMNC_PageBasics;
+
+
+/**
+ *
+ * @description CaseStudy
+ *
+ */
+
+export type CMNC_CaseStudySimple = CMNC_PageBasics & {
+  image: CMNC_Image;
+  path: {
+    title: string;
+    pathTheme?: string;
+  };
+  location?: string;
+  publishedAt: string;
+};
 
 /**
  *

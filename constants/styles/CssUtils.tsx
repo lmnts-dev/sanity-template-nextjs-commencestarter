@@ -44,6 +44,38 @@ export class CssUtils {
     `;
   };
 
+  static LargeScreenGradients = () => {
+    return css`
+      &:after,
+      &:before {
+        content: "";
+        width: ${Root.Grid.Gutter.Left};
+        height: 100%;
+        position: absolute;
+        top: 0;
+        z-index: 2;
+      }
+
+      &:after {
+        right: 0;
+        background: linear-gradient(
+          to right,
+          transparent,
+          ${Color.varBackground()}
+        );
+      }
+
+      &:before {
+        left: 0;
+        background: linear-gradient(
+          to left,
+          transparent,
+          ${Color.varBackground()}
+        );
+      }
+    `;
+  };
+
  static ImageShow = () => {
     return css`
       img {

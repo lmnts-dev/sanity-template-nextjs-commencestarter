@@ -36,6 +36,10 @@ import { TextSlider } from "../sections/loop/TextSlider";
 import { AnimatedStats } from "../sections/loop/AnimatedStats";
 import { HomepageHero } from "../sections/loop/HomepageHero ";
 import { NumberedSlider } from "../sections/loop/NumberedSlider";
+import { SolutionsLinkListings } from "../sections/loop/SolutionsLinkListings";
+import { SolutionsAccordions } from "../sections/loop/SolutionsAccordions";
+import { FaqListings } from "../sections/loop/FaqListings";
+
 
 let SectionComponents = [
   QuoteHero,
@@ -49,6 +53,7 @@ let SectionComponents = [
   CenteredText,
   ColumnContent,
   ContactForm,
+  FaqListings,
   FullWidthImage,
   GridCardListings,
   GridRow,
@@ -64,6 +69,8 @@ let SectionComponents = [
   QuoteSlider,
   SectionBreak,
   SimpleHero,
+  SolutionsLinkListings,
+  SolutionsAccordions,
   SplitSection,
   SplitText,
   StatementHero,
