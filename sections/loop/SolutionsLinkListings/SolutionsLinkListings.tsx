@@ -18,10 +18,10 @@ import {
 //@ts-ignore
 import Link from "next/link";
 import {
+  CMNC_ArticleSimple,
   CMNC_SectionSpacingObject,
   CMNC_Cta,
-  CMNC_Image,
-  CMNC_Slug,
+  CMNC_Solution,
 } from "../../../constants/Types";
 
 import { sectionSpacing } from "../../../utils/sectionSpacing";
@@ -40,18 +40,7 @@ type CMNC_SolutionsLinkListings_Schema = CMNC_SectionSpacingObject & {
   headline?: string;
   blockBasic?: string;
   cta?: CMNC_Cta;
-  solutions?: {
-    _type: "solution";
-    image: CMNC_Image;
-    shortDescription: string;
-    blockStandard: string;
-    slug: CMNC_Slug;
-    features?: {
-      title: string;
-      color: string;
-    }[];
-    content: any; //Section loop
-  }[];
+  solutions?: CMNC_Solution[];
   sectionTheme?: CMNC_SectionTheme;
   fullHeight?: boolean;
 };
@@ -113,7 +102,7 @@ export const SolutionsLinkListings: React.FunctionComponent<
                 className={`${SolutionsLinkListingsClassName}__solutions__container`}
               >
                 <div className={`${SolutionsLinkListingsClassName}__solutions`}>
-                  {solutions.map((item, idx) => {
+                  {solutions.map((item: CMNC_ArticleSimple, idx) => {
                     return (
                       <Link
                         href={generatePath({
@@ -129,7 +118,7 @@ export const SolutionsLinkListings: React.FunctionComponent<
                             }`}
                           >
                             <LinkArrow />
-                            <span>{"Title"}</span>
+                            <span>{item.title}</span>
                           </SolutionsListingsSolution>
                         </a>
                       </Link>

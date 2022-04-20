@@ -44,8 +44,6 @@ import { SplitSectionRegistry } from "./SplitSection";
 import { TeamGridRegistry } from "./TeamGrid";
 import { HomepageHeroRegistry } from "./HomepageHero";
 import { AnimatedStatsRegistry } from "./AnimatedStats";
-import { SolutionsLinkListingsRegistry } from "./SolutionsLinkListings";
-import { SolutionsAccordionsRegistry } from "./SolutionsAccordions";
 import { FaqListingsRegistry } from "./FaqListings";
 
 
@@ -85,8 +83,6 @@ export const SectionRegistry = (includeSections, excludeSections) => {
     { type: SplitTextRegistry.name },
     { type: TextSliderRegistry.name },
     { type: NumberedSliderRegistry.name },
-    { type: SolutionsLinkListingsRegistry.name },
-    { type: SolutionsAccordionsRegistry.name },
 
     //Image
     { type: GridCardListingsRegistry.name },

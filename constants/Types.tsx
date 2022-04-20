@@ -175,6 +175,25 @@ export type CMNC_Feature = CMNC_DefaultSanityProps & {
   aspects?: string[];
   content?: any; //Section loop
 };
+
+/**
+ *
+ * @description Solutions
+ *
+ */
+
+export type CMNC_Solution = CMNC_DefaultSanityProps &
+  CMNC_PageBasics & {
+    _type: "solution";
+    image: CMNC_Image;
+    shortDescription: string;
+    blockStandard: string;
+    features?: {
+      title: string;
+      color: string;
+    }[];
+    content: any; //Section loop
+  };
   
 
 /**

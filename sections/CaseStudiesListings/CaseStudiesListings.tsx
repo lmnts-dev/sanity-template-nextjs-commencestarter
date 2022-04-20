@@ -50,7 +50,7 @@ export const CaseStudiesListings: React.FunctionComponent<
       publishedAt: "06/10/20",
       simpleBody: "Simple Body Content 2",
       slug: {
-        current:"/"
+        current:"/contact"
       }
       }]
     
