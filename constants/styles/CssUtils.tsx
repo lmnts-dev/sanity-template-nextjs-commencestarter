@@ -13,6 +13,7 @@ import { css } from "styled-components";
 import { Theme } from "../Theme";
 import { Root } from "../Root";
 import { Color } from "./Color";
+import { Settings } from "../site/Settings";
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -73,6 +74,71 @@ export class CssUtils {
           ${Color.varBackground()}
         );
       }
+    `;
+  };
+
+  static SlickDots = () => {
+    return css`
+      display: flex !important;
+      height: 5px;
+      pointer-events: none;
+
+      li {
+        width: 21px;
+        height: 100%;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        button {
+          height: 100%;
+          width: 100%;
+          padding: 0;
+          margin: 0;
+          background: ${Color.varForeground()};
+          opacity: 0.1;
+
+          &:before {
+            content: none;
+          }
+        }
+
+        &.slick-active {
+          button {
+            opacity: 0.5;
+          }
+        }
+      }
+    `;
+  };
+
+  static SectionBackground = () => {
+    return css`
+      position: relative;
+      color: var(--foreground);
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        background: var(--background);
+        z-index: -1;
+      }
+
+      //styles to make each section's background color only
+      //expand to the maxSiteWidth, or pastmaxSiteWidth (fullwidth)
+      ${Settings.fullwidthSectionBackgrounds
+        ? `&:after {
+            width: 100vw;
+            left: calc(calc(100vw - 100%) / -2);
+          }`
+        : `&:after {
+          left: 0;
+          width: 100%;
+        }
+      `}
     `;
   };
 

@@ -75,7 +75,7 @@ export const FeaturesListingsStyle = styled.section`
       &:before {
         content: "";
         ${CssUtils.Cover()};
-        background-color: ${Color.varBackgroundAlt};
+        background-color: ${Color.varBackground()};
         opacity: 0;
         will-change: opacity;
         transition: opacity .5s ease;
@@ -145,7 +145,7 @@ export const FeaturesListingsModalStyle = styled.div`
   &:before {
     content: "";
     ${CssUtils.Cover};
-    background-color: ${Color.varBackgroundAlt};
+    background-color: ${Color.varBackground()};
     opacity: .5;
     position: fixed;
     z-index: 998;

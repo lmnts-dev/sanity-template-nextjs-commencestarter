@@ -23,7 +23,7 @@ import {
 
 import { sectionSpacing } from "../../../utils/sectionSpacing";
 import { CMNC_SectionTheme } from "../../../constants/Types";
-import { SimpleCard } from "../../../components/SimpleCard";
+import { SimpleCard } from "../../../components/SimpleCard-2";
 import { generatePath } from "../../../utils/generatePath";
 import { getFormattedDate } from "../../../utils/getFormattedDate";
 
@@ -56,7 +56,7 @@ export const CaseStudiesTeaser: React.FunctionComponent<CMNC_CaseStudiesTeaser> 
       case_studies_teaser_featured_studies,
       spacing,
       sectionThemeSubtle,
-     // featureCard,
+     featureCard,
     } = schema;
 
     //get final set of articles from featured articles and recent articles
@@ -105,9 +105,9 @@ export const CaseStudiesTeaser: React.FunctionComponent<CMNC_CaseStudiesTeaser> 
                   image={caseStudy.image}
                   headline={caseStudy.title}
                   subheadline={caseStudy.path.title + " • " + subheadline}
-                  //largeCard={(featureCard && idx) == 0 ? true : false}
-                 // theme={caseStudy.path.pathTheme}
-                  //featuredCard={(featureCard && idx) == 0 ? true : false}
+                  largeCard={(featureCard && idx) == 0 ? true : false}
+                  theme={caseStudy.path.pathTheme}
+                  featuredCard={(featureCard && idx) == 0 ? true : false}
                   link={generatePath({
                     slug: {
                       current: caseStudy.slug.current,

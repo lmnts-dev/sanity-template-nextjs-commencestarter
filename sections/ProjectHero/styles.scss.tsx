@@ -58,7 +58,7 @@ export const ProjectHeroStyle = styled.section`
     }
 
     &__title, &__subtitle, &__description {
-      color: ${Color.varForeground2};
+      color: ${Color.varForeground()};
     }
 
     &__title {

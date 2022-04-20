@@ -74,7 +74,7 @@ export const ProjectHero: React.FunctionComponent<CMNC_ProjectHero> = ({
   };
 
   let titleInner = (
-    <Parallax y={[-20, 20]} tagOuter="div">
+    <Parallax translateY={[-20, 20]}>
       {title + " "}
 
       {!expanded && (
@@ -140,7 +140,7 @@ export const ProjectHero: React.FunctionComponent<CMNC_ProjectHero> = ({
 
       {expanded && (
         <>
-          <Parallax y={[-20, 20]} tagOuter="div">
+          <Parallax translateY ={[-20, 20]}>
             <h3 className={`${ProjectHeroClassName}__subtitle txt-caption`}>
               <span
                 className={`${ProjectHeroClassName}__subtitle__spacer h2-vw`}

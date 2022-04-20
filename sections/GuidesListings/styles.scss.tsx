@@ -66,7 +66,7 @@ export const SignUpModalStyle = styled.div`
   &:before {
     content: "";
     ${CssUtils.Cover};
-    background-color: ${Color.varBackgroundAlt};
+    background-color: ${Color.varBackground()};
     opacity: .5;
     position: fixed;
     z-index: 998;
@@ -101,7 +101,7 @@ export const SignUpModalStyle = styled.div`
         padding-right: 10%;
 
         &__link {
-          background: ${Color.varBackgroundAlt};
+          background: ${Color.varBackground()};
 
           a {
             display: block;

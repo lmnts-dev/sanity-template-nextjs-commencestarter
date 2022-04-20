@@ -9,7 +9,7 @@ import Pagination from "react-sanity-pagination";
 import { GuidesListingsClassName, GuidesListingsStyle } from "./styles.scss";
 import { sectionSpacing } from "../../utils/sectionSpacing";
 import { PaginationStyle } from "../ArticleListings/styles.scss";
-import { SimpleCard } from "../../components/SimpleCard";
+import { SimpleCard } from "../../components/SimpleCard-2";
 import { generatePath } from "../../utils/generatePath";
 import Arrow from "../../components/Icon/SVG/Custom/Arrow";
 import { ModalContext } from "../../components/core/ModalContext";

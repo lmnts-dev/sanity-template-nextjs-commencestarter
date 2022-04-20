@@ -825,6 +825,20 @@ export const SlideUpInitialStyles = `
   opacity: 0;
 `;
 
+export const RevealRightInitialStyles = `
+  transform: scaleX(0);
+  transform-origin: center left;
+`;
+
+export const RevealRight = keyframes`
+  from {
+    ${RevealRightInitialStyles}
+  }
+  to {
+    transform: scaleX(1);
+  }
+`;
+
 export const LockBody = createGlobalStyle`
   body {
     overflow: hidden !important;
