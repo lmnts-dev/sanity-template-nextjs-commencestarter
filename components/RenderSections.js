@@ -67,7 +67,6 @@ let SectionComponents = [
   QuoteSlider,
   SectionBreak,
   SimpleHero,
-  ,
   SplitSection,
   SplitText,
   StatementHero,
