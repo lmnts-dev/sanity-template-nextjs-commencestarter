@@ -6,6 +6,7 @@ export default {
         templateRepoId: "lmnts-dev/sanity-template-nextjs-commencestarter",
       },
     },
+    { name: "deploy-vercel" },
     { name: "structure-menu" },
     { name: "project-users", layout: { height: "auto" } },
     {

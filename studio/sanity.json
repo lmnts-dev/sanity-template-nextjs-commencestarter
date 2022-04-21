@@ -16,12 +16,16 @@
     "@sanity/desk-tool",
     "@sanity/color-input",
     "asset-source-unsplash",
+    "deploy-vercel",
+    "@sanity/dashboard",
     "media",
     "seo-tools"
   ],
   "env": {
     "development": {
-      "plugins": ["@sanity/vision"]
+      "plugins": [
+        "@sanity/vision"
+      ]
     }
   },
   "parts": [
@@ -32,6 +36,10 @@
     {
       "implements": "part:@sanity/desk-tool/structure",
       "path": "./src/deskStructure"
+    },
+    {
+      "implements": "part:@sanity/dashboard/config",
+      "path": "./dashboard/dashboardConfig.js"
     }
   ]
 }
