@@ -9,6 +9,7 @@ import { getClient, usePreviewSubscription } from "../utils/sanity";
 import { createTheme } from "../utils/createTheme";
 import { SiteHead } from "../components/core/SiteHead";
 import { Settings } from "../constants/site/Settings";
+import { CssToolbar } from "../sections/CssToolbar";
 
 type CMNC_Page = CMNC_PageData;
 
@@ -36,6 +37,11 @@ const Page: NextPage<CMNC_Page> = ({ pageData, preview, slug }) => {
           description={Settings.siteDescription}
         />
         {Theme && <Theme />}
+
+        <CssToolbar schema={{
+          sectionTheme: "dark"
+        }} />
+        
         <RenderSections sections={content} />
       </>
     );
