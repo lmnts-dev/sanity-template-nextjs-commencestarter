@@ -55,10 +55,10 @@ export const CssToolbar: React.FunctionComponent<CMNC_CssToolbar> =
     const [paragraphFontFamily, setParagraphFontFamily] = useState('');
     const [headerFontFamily, setHeaderFontFamily] = useState('');
 
-    const [foregroundColor, setForegroundColor] = useState('');
-    const [backgroundColor, setBackgroundColor] = useState('');
-    const [accentColor, setAccentColor] = useState('');
-    const [placeholderColor, setPlaceholderColor] = useState('');
+    const [foregroundColor, setForegroundColor] = useState('black');
+    const [backgroundColor, setBackgroundColor] = useState('#FEF6ED');
+    const [accentColor, setAccentColor] = useState('grey');
+    const [placeholderColor, setPlaceholderColor] = useState('black');
 
 
     const updatePragraphSize = (e:any) => { 
