@@ -37,6 +37,8 @@ import { BarGraphs } from "./sections/BarGraphs";
 import { BlockQuote } from "./sections/BlockQuote";
 import { LineGraph } from "./sections/LineGraph";
 import { SimpleHero } from "./sections/SimpleHero";
+import { SimpleHero2 } from "./sections/SimpleHero2";
+import { TransitionSplitSection } from "./sections/TransitionSplitSection";
 import { SplitSection } from "./sections/SplitSection";
 import { SplitText } from "./sections/SplitText";
 import { TeamGrid } from "./sections/TeamGrid";
@@ -85,10 +87,12 @@ export default createSchema({
     HomepageHero,
     LineGraph,
     SimpleHero,
+    SimpleHero2,
     SplitSection,
     SplitText,
     TeamGrid,
     TextSlider,
+    TransitionSplitSection,
     NextGuide,
     SectionBreak,
     ImageCollage,

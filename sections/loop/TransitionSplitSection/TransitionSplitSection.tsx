@@ -22,7 +22,7 @@ import {
 } from "../../../constants/Types";
 import { sectionSpacing } from "../../../utils/sectionSpacing";
 import { PortableText } from "../../../utils/sanity";
-import { CMNC_SimpleHero_Schema, SimpleHero } from "../SimpleHero-2";
+import { CMNC_SimpleHero2_Schema, SimpleHero2 } from "../SimpleHero2";
 import Brandmark from "../../../components/Icon/SVG/Custom/Brandmark";
 import { generatePath } from "../../../utils/generatePath";
 import { Sensor } from "../../../components/Sensor";
@@ -37,8 +37,8 @@ type CMNC_TransitionSplitSection_Schema = CMNC_SectionSpacingObject & {
     _type: "page" | "projects";
     slug: CMNC_Slug;
     title: string;
-    simpleHero?: CMNC_SimpleHero_Schema;
-    content?: CMNC_SimpleHero_Schema;
+    simpleHero?: CMNC_SimpleHero2_Schema;
+    content?: CMNC_SimpleHero2_Schema;
   };
   logo?: boolean;
   headline: string;
@@ -55,7 +55,7 @@ export const TransitionSplitSection: React.FunctionComponent<CMNC_TransitionSpli
 
     let destFields = destination.simpleHero
       ? destination.simpleHero
-      : destination.content && destination.content._type == "simpleHero"
+      : destination.content && destination.content._type == "simpleHero-2"
       ? destination.content
       : undefined;
 
@@ -93,9 +93,9 @@ export const TransitionSplitSection: React.FunctionComponent<CMNC_TransitionSpli
             </div>
 
             {isVisible && (
-              <SimpleHero
+              <SimpleHero2
                 schema={{
-                  _type: "simpleHero",
+                  _type: "simpleHero-2",
                   headlineBeginning: destFields
                     ? destFields.headlineBeginning
                     : undefined,

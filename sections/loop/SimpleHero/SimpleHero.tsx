@@ -37,6 +37,8 @@ export const SimpleHero: React.FunctionComponent<CMNC_SimpleHero> = ({
 }) => {
   let { headline, body, spacing, sectionTheme, cta } = schema;
 
+  console.log(schema, 'simplehero');
+
   return (
     <SimpleHeroStyle
       className={`${SimpleHeroClassName} ${

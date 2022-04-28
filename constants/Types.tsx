@@ -7,7 +7,7 @@
  */
 
 import { CMNC_ContactFormForm } from "../sections/loop/ContactForm-2";
-import { CMNC_SimpleHero_Schema } from "../sections/loop/SimpleHero-2";
+import { CMNC_SimpleHero2_Schema } from "../sections/loop/SimpleHero2";
 
 /**
  *
@@ -343,7 +343,7 @@ export type CMNC_Feature = CMNC_DefaultSanityProps & {
 
 export type CMNC_ProjectsSettings = CMNC_DefaultSanityProps & {
   title: string;
-  simpleHero: CMNC_SimpleHero_Schema;
+  simpleHero: CMNC_SimpleHero2_Schema;
   content?: any; //Section loop
   description: string;
 };

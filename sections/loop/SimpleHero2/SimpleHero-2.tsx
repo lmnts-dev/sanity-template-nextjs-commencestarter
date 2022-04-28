@@ -22,8 +22,8 @@ import { isMobile } from "react-device-detect";
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
-export type CMNC_SimpleHero_Schema = {
-  _type: "simpleHero";
+export type CMNC_SimpleHero2_Schema = {
+  _type: "simpleHero-2";
   headlineBeginning?: string;
   headlineEnding: string;
   image: CMNC_Image;
@@ -35,12 +35,12 @@ export type CMNC_SimpleHero_Schema = {
   asSection?: boolean;
 };
 
-type CMNC_SimpleHero = {
-  schema: CMNC_SimpleHero_Schema;
+type CMNC_SimpleHero2 = {
+  schema: CMNC_SimpleHero2_Schema;
   addClass?: string;
 };
 
-export const SimpleHero: React.FunctionComponent<CMNC_SimpleHero> = ({
+export const SimpleHero2: React.FunctionComponent<CMNC_SimpleHero2> = ({
   schema,
   addClass,
 }) => {
@@ -165,7 +165,7 @@ export const SimpleHero: React.FunctionComponent<CMNC_SimpleHero> = ({
   );
 };
 
-SimpleHero.displayName = "SimpleHero";
+SimpleHero2.displayName = "SimpleHero";
 
 // End Component
 //////////////////////////////////////////////////////////////////////

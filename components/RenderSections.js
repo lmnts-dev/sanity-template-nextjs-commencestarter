@@ -29,9 +29,11 @@ import { BarGraphs } from "../sections/loop/BarGraphs";
 import { BlockQuote } from "../sections/loop/BlockQuote";
 import { LineGraph } from "../sections/loop/LineGraph";
 import { SimpleHero } from "../sections/loop/SimpleHero";
+import { SimpleHero2 } from "../sections/loop/SimpleHero2";
 import { SplitSection } from "../sections/loop/SplitSection";
 import { SplitText } from "../sections/loop/SplitText";
 import { TeamGrid } from "../sections/loop/TeamGrid";
+import { TransitionSplitSection } from "../sections/loop/TransitionSplitSection";
 import { TextSlider } from "../sections/loop/TextSlider";
 import { AnimatedStats } from "../sections/loop/AnimatedStats";
 import { HomepageHero } from "../sections/loop/HomepageHero ";
@@ -67,6 +69,7 @@ let SectionComponents = [
   QuoteSlider,
   SectionBreak,
   SimpleHero,
+  SimpleHero2,
   SplitSection,
   SplitText,
   StatementHero,
@@ -74,6 +77,7 @@ let SectionComponents = [
   TeamGrid,
   TextSlider,
   TextOverImage,
+  TransitionSplitSection,
   VideoRow,
   WysiwygSection,
 ];

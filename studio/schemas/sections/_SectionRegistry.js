@@ -40,8 +40,10 @@ import { NumberedSliderRegistry } from "./NumberedSlider";
 import { BarGraphsRegistry } from "./BarGraphs";
 import { LineGraphRegistry } from "./LineGraph";
 import { SimpleHeroRegistry } from "./SimpleHero";
+import { SimpleHero2Registry } from "./SimpleHero2";
 import { SplitSectionRegistry } from "./SplitSection";
 import { TeamGridRegistry } from "./TeamGrid";
+import { TransitionSplitSectionRegistry } from "./TransitionSplitSection";
 import { HomepageHeroRegistry } from "./HomepageHero";
 import { AnimatedStatsRegistry } from "./AnimatedStats";
 import { FaqListingsRegistry } from "./FaqListings";
@@ -96,9 +98,11 @@ export const SectionRegistry = (includeSections, excludeSections) => {
     { type: OverlapHeroRegistry.name },
     { type: BarGraphsRegistry.name },
     { type: LineGraphRegistry.name },
-    { type: SimpleHeroRegistry.name},
+    { type: SimpleHeroRegistry.name },
+    { type: SimpleHero2Registry.name},
     { type: SplitSectionRegistry.name },
     { type: TeamGridRegistry.name },
+    { type: TransitionSplitSectionRegistry.name },
     { type: HomepageHeroRegistry.name },
 
     //FAQS

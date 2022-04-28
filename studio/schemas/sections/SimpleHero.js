@@ -6,8 +6,11 @@
  */
 
 import { SectionName } from "../components/SectionName";
+import { SectionSpacing } from "../components/Spacing";
+import { Cta } from "../components/Cta";
+import { Body, Caption, Headline, HeadlineReq } from "../components/TextItems";
 import { SectionTheme } from "../components/SectionTheme";
-import { Image2 } from "../components/ImageItems";
+import { BlockBasic } from "../components/DefaultBlocks";
 
 // __________________________________________________________________________________________
 
@@ -20,49 +23,11 @@ export const SimpleHeroRegistry = {
 export const SimpleHero = {
   ...SimpleHeroRegistry,
   fields: [
-    {
-      name: "headlineBeginning",
-      title: "Headline Beginning",
-      type: "string",
-      description: "This part of the headline will be in a smaller font",
-    },
-    {
-      name: "headlineEnding",
-      title: "Headline Ending",
-      validation: (validate) => validate.required(),
-      type: "string",
-      description: "This part of the headline will be in a larger font",
-    },
-    {
-      name: "video",
-      title: "Video",
-      description:
-        "Optional. If included it will be autocropped to fit the entire screen.",
-      type: "string",
-    },
-    {
-      name: "gif",
-      title: "Video GIF Fallback",
-      description:
-        "Videos cause background music to pause on mobile. To avoid this behavior, upload a GIF of the video to use on mobile. Be careful of giant GIF sizes.",
-      type: "image",
-    },
-    ...Image2(
-      true,
-      "If excluding a video, this image will always show. If including a video, this image will be used as a fallback when the video hasn't loaded yet. For this reason, we suggest making the image the first frame of the video."
-    ),
+    ...SectionName,
+    ...HeadlineReq,
+    ...BlockBasic(false, undefined, "Body", "body"),
+    ...Cta(),
+    ...SectionSpacing,
     ...SectionTheme,
   ],
-  preview: {
-    select: {
-      title: "headlineBeginning",
-      subtitle: "headlineEnding",
-    },
-    prepare(selection) {
-      const { title, subtitle } = selection;
-      return {
-        title: (title ? title + " " : "") + subtitle,
-      };
-    },
-  },
 };
