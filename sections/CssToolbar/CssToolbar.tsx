@@ -158,42 +158,42 @@ export const CssToolbar: React.FunctionComponent<CMNC_CssToolbar> =
         --placeholder: ${placeholderColor}!important;
       }
 
-      p{
+      p, .p{
         font-size: ${paragraphSize}px;
         font-family: ${paragraphFontFamily};
         font-weight: ${paragraphWeight};
       }
 
-      h1,h2,h3,h4,h5,h6{
+      h1,h2,h3,h4,h5,h6, .h1, .h2, .h3, h4, .h5, .h6{
         font-family: ${headerFontFamily};
       }
 
-      h1{
+      h1, .h1{
         font-size: ${h1Size}px;
         font-weight: ${h1Weight};
       }
 
-      h2{
+      h2, .h2{
         font-size: ${h2Size}px;
         font-weight: ${h2Weight};
       }
       
-      h3{
+      h3, .h3{
         font-size: ${h3Size}px;
         font-weight: ${h3Weight};
       }
 
-      h4{
+      h4, .h4{
         font-size: ${h4Size}px;
         font-weight: ${h4Weight};
       }
 
-      h5{
+      h5, .h5{
         font-size: ${h5Size}px;
         font-weight: ${h5Weight};
       }
 
-      h6{
+      h6, .h6{
         font-size: ${h6Size}px;
         font-weight: ${h6Weight};
       }
