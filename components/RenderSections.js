@@ -39,11 +39,16 @@ import { AnimatedStats } from "../sections/loop/AnimatedStats";
 import { HomepageHero } from "../sections/loop/HomepageHero ";
 import { NumberedSlider } from "../sections/loop/NumberedSlider";
 import { FaqListings } from "../sections/loop/FaqListings";
-
+import { GuidesTeaser } from "../sections/loop/GuidesTeaser";
+import { SolutionsLinkListings } from "../sections/loop/SolutionsLinkListings";
+import { FeaturesListings } from "../sections/loop/FeaturesListings";
+import { ArticleHero } from "../sections/ArticleHero";
+import { CaseStudiesListings } from "../sections/CaseStudiesListings";
 
 let SectionComponents = [
   QuoteHero,
   AnimatedHeadline,
+  ArticleHero,
   AccordionListings,
   AnimatedStats,
   BarGraphs,
@@ -51,12 +56,15 @@ let SectionComponents = [
   BlogTeaser,
   Quote,
   CenteredText,
+  CaseStudiesListings,
   ColumnContent,
   ContactForm,
   FaqListings,
   FullWidthImage,
   GridCardListings,
+  GuidesTeaser,
   GridRow,
+  FeaturesListings,
   HomepageHero,
   Headline,
   ImageCollage,
@@ -78,6 +86,7 @@ let SectionComponents = [
   TextSlider,
   TextOverImage,
   TransitionSplitSection,
+  SolutionsLinkListings,
   VideoRow,
   WysiwygSection,
 ];
@@ -100,7 +109,7 @@ function resolveSections(section) {
 }
 
 function RenderSections(props) {
-  const { sections } = props;
+  const { sections, titleSections } = props;
 
   if (!sections) {
     console.error("Missing section");
@@ -114,7 +123,17 @@ function RenderSections(props) {
         if (!SectionComponent) {
           return <div>Missing section {upperFirst(section._type)}</div>;
         }
-        return <SectionComponent schema={section} key={section._key} />;
+        return (
+          <>
+            {titleSections && (
+              <section style={{ background: "#FFFFFF", padding: "100px 40px" }}>
+                <h1>Section: {section._type}</h1>
+              </section>
+            )}
+
+            <SectionComponent schema={section} key={section._key} />
+          </>
+        );
       })}
     </Fragment>
   );
@@ -128,7 +147,7 @@ RenderSections.propTypes = {
       section: PropTypes.instanceOf(PropTypes.object),
     })
   ),
+  titleSections: PropTypes.bool,
 };
 
 export default RenderSections;
-

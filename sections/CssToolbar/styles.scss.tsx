@@ -25,14 +25,48 @@ export const CssToolbarClassName = "css-toolbar";
 
 //article listings, aka "blog" page
 export const CssToolbarStyle = styled.section`
-   padding: 0;
-   top: 0;
+   --toolbarSize: ${Root.Size};
+   left: calc(var(--toolbarSize) / 2);
+   bottom: calc(var(--toolbarSize) / 2);
+   right: calc(var(--toolbarSize) / 2);
    z-index: 1000;
-   position: sticky!important;
+   padding: calc(var(--toolbarSize));
+   position: fixed !important;
    background: ${Color.varBackground()};
    display:flex;
    flex-wrap:wrap;
    align-items:center;
+
+   &:after {
+      content: none !important;
+   }
+
+   .toggle {
+      z-index: 1001;
+      position: absolute;
+      transform: rotate(180deg);
+      color: white;
+      height: var(--toolbarSize);
+      width: var(--toolbarSize);
+      left: 0;
+      bottom: 0;
+      display: grid;
+      place-content: center;
+      font-size: calc(var(--toolbarSize) / 2);
+   }
+
+   &:not(.__open){
+      padding: calc(${Root.Size} / 2);
+      right: unset;
+
+      .toggle span {
+         transform: scaleY(-1) translateY(25%);
+      }
+
+      > *:not(.toggle) {
+         display: none !important;
+      }
+   }
 
    input{
       color: var(--background);

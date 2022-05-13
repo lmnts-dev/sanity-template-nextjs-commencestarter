@@ -13,7 +13,6 @@ import styled from "styled-components";
 import { Root } from "../../../constants/Root";
 import { Color } from "../../../constants/styles/Color";
 import { CssUtils } from "../../../constants/styles/CssUtils";
-import { SlideUpInitialStyles, animationVisibilityClass, SlideUp } from "../../../constants/styles/Global";
 
 // Constants
 import { Theme } from "../../../constants/Theme";
@@ -31,7 +30,7 @@ export const AnimatedStatsStyle = styled.section`
   .${AnimatedStatsClassName}{
     &__headline {
       max-width: 700px;
-      ${SlideUpInitialStyles}
+      min-height: 200px;
     }
 
     &__stats__container {
@@ -93,20 +92,16 @@ export const AnimatedStatsStyle = styled.section`
     }
   }
 
-  &.${animationVisibilityClass} {
-    .${AnimatedStatsClassName}{
-      &__headline {
-        animation: ${SlideUp} 1s forwards;
-      }
-    }
-  }
-
   @media (max-width: ${Theme.Base.Media.Width.Md}) {
     --animatedStatsStatsWidth: 30%;
   }
 
   @media (max-width: ${Theme.Base.Media.Width.Sm}) {
     .${AnimatedStatsClassName}{
+      &__headline {
+        min-height: auto;
+      }
+
       &__container {
         display: block;
 

@@ -23,8 +23,6 @@ import Arrow from "../../../components/Icon/SVG/Custom/Arrow";
 import { SliderArrow } from "../QuoteSlider/styles.scss";
 import { PortableText } from "../../../utils/sanity";
 import { Ctas } from "../../../components/Cta";
-import { Sensor } from "../../../components/Sensor";
-import { animationVisibilityClass } from "../../../constants/styles/Global";
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -109,22 +107,14 @@ export const NumberedSlider: React.FunctionComponent<CMNC_NumberedSlider> = ({
       percentScrolled={percentScrolled}
       scrollBarWidth={items.length > 0 ? 100 / (items.length - 1) : 0}
     >
-      <Sensor partialVisibility={true} offset={{ top: 0 }}>
-        {({ isVisible }: { isVisible: boolean }) => (
-          <div
-            className={`${NumberedSliderClassName}__header ${
-              isVisible ? animationVisibilityClass : ""
-            }`}
-          >
-            <h2
-              className={`${NumberedSliderClassName}__header__headline h3 __fnt-upper`}
-            >
-              {headline}
-            </h2>
-            <span className={`${NumberedSliderClassName}__header__scrollbar`} />
-          </div>
-        )}
-      </Sensor>
+      <div className={`${NumberedSliderClassName}__header `}>
+        <h2
+          className={`${NumberedSliderClassName}__header__headline h3 __fnt-upper`}
+        >
+          {headline}
+        </h2>
+        <span className={`${NumberedSliderClassName}__header__scrollbar`} />
+      </div>
 
       <Slider
         {...settings}

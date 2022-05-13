@@ -9,8 +9,6 @@
 import React from "react";
 import { Cta } from "../../../components/Cta";
 import GraphBar from "../../../components/Icon/SVG/Custom/GraphBar";
-import { Sensor } from "../../../components/Sensor";
-import { animationVisibilityClass } from "../../../constants/styles/Global";
 import { CMNC_Cta, CMNC_SectionTheme } from "../../../constants/Types";
 import {
   h1WithLinksSerializers,
@@ -61,77 +59,58 @@ export const HomepageHero: React.FunctionComponent<CMNC_HomepageHero> = ({
           sectionTheme ? `__theme-${alternateSectionTheme}` : ""
         }`}
       >
-        <Sensor partialVisibility={true} offset={{ top: 0 }}>
-          {({ isVisible }: { isVisible: boolean }) => (
+        <div className={`${HomepageHeroClassName}__first-section`}>
+          <PortableText blocks={blockH1} serializers={h1WithLinksSerializers} />
+          {blockBasic && (
             <div
-              className={`${HomepageHeroClassName}__first-section ${
-                isVisible ? animationVisibilityClass : ""
+              className={`${HomepageHeroClassName}__first-section__body h5 ${
+                !cta ? "__last-item" : ""
               }`}
             >
-              <PortableText
-                blocks={blockH1}
-                serializers={h1WithLinksSerializers}
-              />
-              {blockBasic && (
-                <div
-                  className={`${HomepageHeroClassName}__first-section__body h5 ${
-                    !cta ? "__last-item" : ""
-                  }`}
-                >
-                  <PortableText blocks={blockBasic} />
-                </div>
-              )}
-              {cta && (
-                <div
-                  className={`${HomepageHeroClassName}__first-section__btn __last-item`}
-                >
-                  <Cta cta={cta} addClass={`btn __btn-underline`} />
-                </div>
-              )}
-              <div className={`${HomepageHeroClassName}__first-section__svg`}>
-                <GraphBar type="man-25" />
-                <GraphBar type="bar-40" />
-                <GraphBar type="man-55" />
-                <GraphBar type="bar-70" />
-                <GraphBar type="bar-85" />
-                <GraphBar type="man-100" />
-              </div>
+              <PortableText blocks={blockBasic} />
             </div>
           )}
-        </Sensor>
+          {cta && (
+            <div
+              className={`${HomepageHeroClassName}__first-section__btn __last-item`}
+            >
+              <Cta cta={cta} addClass={`btn __btn-underline`} />
+            </div>
+          )}
+          <div className={`${HomepageHeroClassName}__first-section__svg`}>
+            <GraphBar type="man-25" />
+            <GraphBar type="bar-40" />
+            <GraphBar type="man-55" />
+            <GraphBar type="bar-70" />
+            <GraphBar type="bar-85" />
+            <GraphBar type="man-100" />
+          </div>
+        </div>
       </HomepageHeroStyle>
       <HomepageHeroStyle
         className={`${HomepageHeroClassName} ${sectionSpacing({
           top: "none",
         })} ${addClass} ${sectionTheme ? `__theme-${sectionTheme}` : ""}`}
       >
-        <Sensor partialVisibility={true} offset={{ top: 0 }}>
-          {({ isVisible }: { isVisible: boolean }) => (
-            <div
-              className={`${HomepageHeroClassName}__second-section ${
-                isVisible ? animationVisibilityClass : ""
-              }`}
-            >
-              <div
-                className={`${HomepageHeroClassName}__second-section__headline `}
-              >
-                <PortableText
-                  blocks={blockH2}
-                  serializers={h2WithLinksSerializers}
-                />
-              </div>
+        <div className={`${HomepageHeroClassName}__second-section`}>
+          <div
+            className={`${HomepageHeroClassName}__second-section__headline `}
+          >
+            <PortableText
+              blocks={blockH2}
+              serializers={h2WithLinksSerializers}
+            />
+          </div>
 
-              <div className={`${HomepageHeroClassName}__second-section__svg`}>
-                <GraphBar />
-                <GraphBar />
-                <GraphBar />
-                <GraphBar />
-                <GraphBar />
-                <GraphBar />
-              </div>
-            </div>
-          )}
-        </Sensor>
+          <div className={`${HomepageHeroClassName}__second-section__svg`}>
+            <GraphBar />
+            <GraphBar />
+            <GraphBar />
+            <GraphBar />
+            <GraphBar />
+            <GraphBar />
+          </div>
+        </div>
       </HomepageHeroStyle>
     </>
   );

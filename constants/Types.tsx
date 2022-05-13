@@ -24,7 +24,6 @@ export type Sanity_DefaultItem = {
   _createdAt: string;
 };
 
-
 /**
  *
  * @description Call to action types
@@ -138,7 +137,6 @@ export type CMNC_Quiz_Question = {
   }[];
 };
 
-
 /**
  *
  * @description Path
@@ -184,7 +182,6 @@ export type CMNC_PathsIntro = CMNC_DefaultSanityProps & {
     pathTheme: CMNC_PathTheme;
   }[];
 };
-
 
 /**
  *
@@ -282,7 +279,6 @@ export type CMNC_ScrollDirection = "top" | "down" | "up";
 export type CMNC_SectionAccent = "mustard" | "yellow" | "light-blue";
 export type CMNC_SectionThemeSubtle = "default" | "light-gray";
 
-
 export type CMNC_AddStickyHeader = {
   sticky_header?: CMNC_StickyHeader;
 };
@@ -324,7 +320,7 @@ export type CMNC_Service = CMNC_DefaultSanityProps &
     content: any; //Section loop
     //__document: CMNC_CurrentService;
     //seo?: CMNC_SEO;
-};
+  };
 
 export type CMNC_Feature = CMNC_DefaultSanityProps & {
   _type: "feature";
@@ -333,7 +329,6 @@ export type CMNC_Feature = CMNC_DefaultSanityProps & {
   aspects?: string[];
   content?: any; //Section loop
 };
-
 
 /**
  *
@@ -357,8 +352,8 @@ export type CMNC_Project = CMNC_DefaultSanityProps &
     tagline: string;
     blockBasic: string;
     content: any;
-};
-  
+  };
+
 /**
  *
  * @description Solutions
@@ -377,7 +372,6 @@ export type CMNC_Solution = CMNC_DefaultSanityProps &
     }[];
     content: any; //Section loop
   };
-  
 
 /**
  *
@@ -407,15 +401,13 @@ export type CMNC_Article = CMNC_DefaultSanityProps &
     content: any; //Section loop
     author: CMNC_Author;
     tags?: string[];
-};
-
+  };
 
 export type CMNC_ArticleSimple = CMNC_PageBasics & {
   image: CMNC_Image;
 };
 
 export type CMNC_Category = CMNC_PageBasics;
-
 
 /**
  *

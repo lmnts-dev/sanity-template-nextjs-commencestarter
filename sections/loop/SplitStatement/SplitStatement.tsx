@@ -19,7 +19,6 @@ import Image from "next/image";
 
 // Styles
 import { SplitStatementStyle, SplitStatementClassName } from "./styles.scss";
-import { Sensor } from "../../../components/Sensor";
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -74,22 +73,14 @@ export const SplitStatement: React.FunctionComponent<LMNTS_SplitStatement> = ({
         sectionTheme ? `__theme-${sectionTheme}` : ""
       }`}
     >
-      <Sensor partialVisibility>
-        {({ isVisible }: { isVisible: boolean }) => (
-          <div
-            className={`${SplitStatementClassName}__image ${
-              isVisible ? "__visible" : ""
-            }`}
-          >
-            <Image
-              src={image.url}
-              layout="fill"
-              objectFit="cover"
-              alt={imageAltText}
-            />
-          </div>
-        )}
-      </Sensor>
+      <div className={`${SplitStatementClassName}__image`}>
+        <Image
+          src={image.url}
+          layout="fill"
+          objectFit="cover"
+          alt={imageAltText}
+        />
+      </div>
       {part1 && (
         <p className={`${SplitStatementClassName}__part1 h3-vw`}>{part1}</p>
       )}

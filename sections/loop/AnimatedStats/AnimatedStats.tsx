@@ -7,8 +7,6 @@
 
 // Core
 import React from "react";
-import { Sensor } from "../../../components/Sensor";
-import { animationVisibilityClass } from "../../../constants/styles/Global";
 import {
   CMNC_SectionAccent,
   CMNC_SectionSpacingObject,
@@ -44,40 +42,36 @@ export const AnimatedStats: React.FunctionComponent<CMNC_AnimatedStats> = ({
 }) => {
   let { spacing, blockStandard, stats, sectionTheme, sectionAccent } = schema;
 
+  stats = stats.length > 5 ? stats : stats.concat(stats);
+
   return (
-    <Sensor partialVisibility={true} offset={{ top: 0 }}>
-      {({ isVisible }: { isVisible: boolean }) => (
-        <AnimatedStatsStyle
-          className={`${AnimatedStatsClassName} ${sectionSpacing(
-            spacing
-          )} ${addClass} ${sectionTheme ? `__theme-${sectionTheme}` : ""} ${
-            sectionAccent ? `__theme-accent-${sectionAccent}` : ""
-          } ${isVisible ? animationVisibilityClass : ""}`}
-        >
-          <div className={`${AnimatedStatsClassName}__container`}>
-            <div className={`${AnimatedStatsClassName}__headline`}>
-              <PortableText blocks={blockStandard} />
-            </div>
-            <div className={`${AnimatedStatsClassName}__stats__container`}>
-              <div className={`${AnimatedStatsClassName}__stats`}>
-                {stats.map((stat, idx) => {
-                  return (
-                    <p key={idx}>
-                      <span className={`h1 __fnt-emphasize`}>
-                        {stat.number}
-                      </span>
-                      {stat.label && (
-                        <span className={`__fnt-emphasize`}>{stat.label}</span>
-                      )}
-                    </p>
-                  );
-                })}
-              </div>
-            </div>
+    <AnimatedStatsStyle
+      className={`${AnimatedStatsClassName} ${sectionSpacing(
+        spacing
+      )} ${addClass} ${sectionTheme ? `__theme-${sectionTheme}` : ""} ${
+        sectionAccent ? `__theme-accent-${sectionAccent}` : ""
+      }`}
+    >
+      <div className={`${AnimatedStatsClassName}__container`}>
+        <div className={`${AnimatedStatsClassName}__headline`}>
+          <PortableText blocks={blockStandard} />
+        </div>
+        <div className={`${AnimatedStatsClassName}__stats__container`}>
+          <div className={`${AnimatedStatsClassName}__stats`}>
+            {stats.map((stat, idx) => {
+              return (
+                <p key={idx}>
+                  <span className={`h1 __fnt-emphasize`}>{stat.number}</span>
+                  {stat.label && (
+                    <span className={`__fnt-emphasize`}>{stat.label}</span>
+                  )}
+                </p>
+              );
+            })}
           </div>
-        </AnimatedStatsStyle>
-      )}
-    </Sensor>
+        </div>
+      </div>
+    </AnimatedStatsStyle>
   );
 };
 

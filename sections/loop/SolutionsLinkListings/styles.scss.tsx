@@ -12,7 +12,6 @@
 import styled from "styled-components";
 import { Root } from "../../../constants/Root";
 import { Color } from "../../../constants/styles/Color";
-import { animationVisibilityClass, RevealBtn, RevealBtnInitialStyles, RevealRight, RevealRightInitialStyles, SlideUp, SlideUpInitialStyles } from "../../../constants/styles/Global";
 import { Theme } from "../../../constants/Theme";
 
 // Constants
@@ -29,14 +28,6 @@ export const SolutionsLinkListingsStyle = styled.section`
       position: sticky;
       position: -webkit-sticky;
       top: calc(var(--NavSize) * 1.5);
-
-      &__headline, &__body {
-        ${SlideUpInitialStyles}
-      }
-
-      &__btn {
-        ${RevealBtnInitialStyles}
-      }
 
       > * {
         max-width: 600px;
@@ -61,69 +52,6 @@ export const SolutionsLinkListingsStyle = styled.section`
     .${SolutionsLinkListingsClassName} {
       &__solutions {
         position: relative;
-      }
-    }
-  }
-
-  &.${animationVisibilityClass} {
-    .${SolutionsLinkListingsClassName} {
-      &__header {
-
-        &__headline {
-          animation: ${SlideUp} 1s forwards;
-        }
-
-        &__body {
-          animation: ${SlideUp} 1s forwards .25s;
-        }
-
-        &__btn {
-          animation: ${RevealBtn} 1s forwards .5s;
-        }
-      }
-
-      &__solutions {
-        &__solution {
-          &:nth-of-type(1):after {
-            animation: ${RevealRight} 1s forwards;
-          }
-
-          &:nth-of-type(2):after {
-            animation: ${RevealRight} 1s forwards .25s;
-          }
-
-          &:nth-of-type(3):after {
-            animation: ${RevealRight} 1s forwards .5s;
-          }
-
-          &:nth-of-type(4):after {
-            animation: ${RevealRight} 1s forwards .75s;
-          }
-
-          &:nth-of-type(5):after {
-            animation: ${RevealRight} 1s forwards 1s;
-          }
-
-          &:nth-of-type(6):after {
-            animation: ${RevealRight} 1s forwards 1.25s;
-          }
-
-          &:nth-of-type(7):after {
-            animation: ${RevealRight} 1s forwards 1.5s;
-          }
-
-          &:nth-of-type(8):after {
-            animation: ${RevealRight} 1s forwards 1.75s;
-          }
-
-          &:nth-of-type(9):after {
-            animation: ${RevealRight} 1s forwards 2s;
-          }
-
-          &:nth-of-type(10):after {
-            animation: ${RevealRight} 1s forwards 2.25s;
-          }
-        }  
       }
     }
   }
@@ -182,7 +110,6 @@ export const SolutionsListingsSolution = styled.span`
     left: 0;
     right: 0;
     border-bottom: 1px solid ${Color.varForeground()};
-    ${RevealRightInitialStyles};
   }
 
   &:focus {

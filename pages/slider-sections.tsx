@@ -1,19 +1,22 @@
-import { GetStaticProps, NextPage } from "next";
 import Error from "next/error";
-import { useRouter } from "next/router";
+import { getClient, usePreviewSubscription } from "../utils/sanity";
+import { Queries } from "../constants/Queries";
 import React from "react";
 import RenderSections from "../components/RenderSections";
-import { Queries } from "../constants/Queries";
+import { GetStaticProps, NextPage } from "next";
 import { CMNC_PageData } from "../constants/Types";
-import { getClient, usePreviewSubscription } from "../utils/sanity";
 import { createTheme } from "../utils/createTheme";
 import { SiteHead } from "../components/core/SiteHead";
 import { Settings } from "../constants/site/Settings";
 import { CssToolbar } from "../sections/CssToolbar";
+import { useRouter } from "next/router";
+export type CMNC_SliderSectionsPage = CMNC_PageData;
 
-type CMNC_Page = CMNC_PageData;
-
-const Page: NextPage<CMNC_Page> = ({ pageData, preview, slug }) => {
+const SliderSectionsPage: NextPage<CMNC_SliderSectionsPage> = ({
+  pageData,
+  preview,
+  slug,
+}) => {
   if (pageData) {
     let { pageTheme, content } = pageData;
     const router = useRouter();
@@ -44,7 +47,7 @@ const Page: NextPage<CMNC_Page> = ({ pageData, preview, slug }) => {
           }}
         />
 
-        <RenderSections sections={content} />
+        <RenderSections sections={content} titleSections={true} />
       </>
     );
   } else {
@@ -53,12 +56,12 @@ const Page: NextPage<CMNC_Page> = ({ pageData, preview, slug }) => {
 };
 
 export const getStaticProps: GetStaticProps = async ({
-  params = {},
+  //params = {},
   preview = false,
 }) => {
-  const { slug } = params;
+  let slug = "slider-sections";
   const pageData = await getClient(preview).fetch(Queries.CurrentPage(), {
-    slug,
+    slug: slug,
   });
 
   return {
@@ -66,13 +69,11 @@ export const getStaticProps: GetStaticProps = async ({
   };
 };
 
-export async function getStaticPaths() {
-  const routes = await getClient().fetch(Queries.AllPagesSlugsForPaths());
+export default SliderSectionsPage;
 
-  return {
-    paths: routes || null,
-    fallback: true,
-  };
-}
-
-export default Page;
+/*
+  const { data: products } = usePreviewSubscription(Queries.HomePage(), {
+    initialData: productsData,
+    enabled: preview || router.query.preview !== null,
+  });
+  */

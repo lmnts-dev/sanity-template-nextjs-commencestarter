@@ -27,8 +27,6 @@ import {
 import { PortableText } from "../../../utils/sanity";
 import { generatePath } from "../../../utils/generatePath";
 import Link from "next/link";
-import { Sensor } from "../../../components/Sensor";
-import { animationVisibilityClass } from "../../../constants/styles/Global";
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
@@ -67,86 +65,78 @@ export const SolutionsAccordions: React.FunctionComponent<
 
   if (solutions && solutions.length > 0) {
     return (
-      <Sensor partialVisibility={true} offset={{ top: 0 }}>
-        {({ isVisible }: { isVisible: boolean }) => (
-          <SolutionsAccordionsStyle
-            className={`${SolutionsAccordionsClassName} ${sectionSpacing(
-              spacing
-            )} ${addClass} ${sectionTheme ? `__theme-${sectionTheme}` : ""} ${
-              isVisible ? animationVisibilityClass : ""
-            }`}
-          >
-            {solutions &&
-              solutions.map((item, idx) => {
-                return (
-                  <SolutionsListingsSolution
-                    className={`${SolutionsAccordionsClassName}__solution ${
-                      idx == activeSolution ? "__open" : ""
-                    }`}
-                    as="button"
-                    key={idx}
-                    onClick={() => handleClick(idx)}
+      <SolutionsAccordionsStyle
+        className={`${SolutionsAccordionsClassName} ${sectionSpacing(
+          spacing
+        )} ${addClass} ${sectionTheme ? `__theme-${sectionTheme}` : ""} `}
+      >
+        {solutions &&
+          solutions.map((item, idx) => {
+            return (
+              <SolutionsListingsSolution
+                className={`${SolutionsAccordionsClassName}__solution ${
+                  idx == activeSolution ? "__open" : ""
+                }`}
+                as="button"
+                key={idx}
+                onClick={() => handleClick(idx)}
+              >
+                <Plus />
+                <span className={`__fnt-upper`}>Title</span>
+                <div
+                  className={`${SolutionsAccordionsClassName}__solution__content`}
+                >
+                  <div
+                    className={`${SolutionsAccordionsClassName}__solution__content__image`}
                   >
-                    <Plus />
-                    <span className={`__fnt-upper`}>Title</span>
-                    <div
-                      className={`${SolutionsAccordionsClassName}__solution__content`}
+                    <Image
+                      src={item.image.url}
+                      //@ts-ignore
+                      layout="fill"
+                      //@ts-ignore
+                      lazyBoundary={"700px"}
+                      objectFit="cover"
+                      alt={"Title"}
+                    />
+                  </div>
+                  <div
+                    className={`${SolutionsAccordionsClassName}__solution__content__description`}
+                  >
+                    <PortableText blocks={item.blockStandard} />
+                  </div>
+                  {item.features && item.features.length > 0 && (
+                    <SolutionFeatures
+                      className={`${SolutionsAccordionsClassName}__solution__content__features`}
                     >
-                      <div
-                        className={`${SolutionsAccordionsClassName}__solution__content__image`}
-                      >
-                        <Image
-                          src={item.image.url}
-                          //@ts-ignore
-                          layout="fill"
-                          //@ts-ignore
-                          lazyBoundary={"700px"}
-                          objectFit="cover"
-                          alt={"Title"}
-                        />
-                      </div>
-                      <div
-                        className={`${SolutionsAccordionsClassName}__solution__content__description`}
-                      >
-                        <PortableText blocks={item.blockStandard} />
-                      </div>
-                      {item.features && item.features.length > 0 && (
-                        <SolutionFeatures
-                          className={`${SolutionsAccordionsClassName}__solution__content__features`}
-                        >
-                          {item.features.map((feature, idxx) => {
-                            return (
-                              <li
-                                key={idxx}
-                                className={`__theme-accent-${feature.color}`}
-                              >
-                                <p>{feature.title}</p>
-                              </li>
-                            );
-                          })}
-                        </SolutionFeatures>
-                      )}
-                      <div
-                        className={`${SolutionsAccordionsClassName}__solution__content__cta`}
-                      >
-                        <Link
-                          href={generatePath({
-                            _type: "solution",
-                            slug: item.slug,
-                          })}
-                        >
-                          <a className={`btn __btn-underline`}>
-                            Explore Title
-                          </a>
-                        </Link>
-                      </div>
-                    </div>
-                  </SolutionsListingsSolution>
-                );
-              })}
-          </SolutionsAccordionsStyle>
-        )}
-      </Sensor>
+                      {item.features.map((feature, idxx) => {
+                        return (
+                          <li
+                            key={idxx}
+                            className={`__theme-accent-${feature.color}`}
+                          >
+                            <p>{feature.title}</p>
+                          </li>
+                        );
+                      })}
+                    </SolutionFeatures>
+                  )}
+                  <div
+                    className={`${SolutionsAccordionsClassName}__solution__content__cta`}
+                  >
+                    <Link
+                      href={generatePath({
+                        _type: "solution",
+                        slug: item.slug,
+                      })}
+                    >
+                      <a className={`btn __btn-underline`}>Explore Title</a>
+                    </Link>
+                  </div>
+                </div>
+              </SolutionsListingsSolution>
+            );
+          })}
+      </SolutionsAccordionsStyle>
     );
   } else return <></>;
 };

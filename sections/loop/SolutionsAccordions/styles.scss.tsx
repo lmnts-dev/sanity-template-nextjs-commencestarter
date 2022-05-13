@@ -13,7 +13,6 @@
 import styled from "styled-components";
 import { Root } from "../../../constants/Root";
 import { Color } from "../../../constants/styles/Color";
-import { animationVisibilityClass, RevealRight } from "../../../constants/styles/Global";
 
 // Constants
 import { Theme } from "../../../constants/Theme";
@@ -65,52 +64,6 @@ export const SolutionsAccordionsStyle = styled.section`
               max-height: 300000px;
             }
           }
-        }
-      }
-    }
-  }
-
-  &.${animationVisibilityClass} {
-    .${SolutionsAccordionsClassName}{
-      &__solution {
-        &:nth-of-type(1):after {
-          animation: ${RevealRight} 1s forwards;
-        }
-
-        &:nth-of-type(2):after {
-          animation: ${RevealRight} 1s forwards .25s;
-        }
-
-        &:nth-of-type(3):after {
-          animation: ${RevealRight} 1s forwards .5s;
-        }
-
-        &:nth-of-type(4):after {
-          animation: ${RevealRight} 1s forwards .75s;
-        }
-
-        &:nth-of-type(5):after {
-          animation: ${RevealRight} 1s forwards 1s;
-        }
-
-        &:nth-of-type(6):after {
-          animation: ${RevealRight} 1s forwards 1.25s;
-        }
-
-        &:nth-of-type(7):after {
-          animation: ${RevealRight} 1s forwards 1.5s;
-        }
-
-        &:nth-of-type(8):after {
-          animation: ${RevealRight} 1s forwards 1.75s;
-        }
-
-        &:nth-of-type(9):after {
-          animation: ${RevealRight} 1s forwards 2s;
-        }
-
-        &:nth-of-type(10):after {
-          animation: ${RevealRight} 1s forwards 2.25s;
         }
       }
     }

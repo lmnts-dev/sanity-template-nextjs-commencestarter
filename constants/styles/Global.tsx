@@ -762,6 +762,15 @@ const Reset = createGlobalStyle`
     }
   }
 
+  @keyframes marqueeVert {
+    from {
+      transform: translateY(0%);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+
   @keyframes marquee {
     from {
       transform: translateX(0%);
@@ -804,7 +813,6 @@ export const RevealBtn = keyframes`
     color: ${Color.varAccent()};
   }
 `;
-
 
 export const RevealDownInitialStyles = `
   transform: scaleY(0);

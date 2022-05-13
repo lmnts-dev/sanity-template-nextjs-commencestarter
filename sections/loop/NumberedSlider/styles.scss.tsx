@@ -12,7 +12,6 @@
 import styled from "styled-components";
 import { Root } from "../../../constants/Root";
 import { Color } from "../../../constants/styles/Color";
-import { animationVisibilityClass, SlideUp, SlideUpInitialStyles } from "../../../constants/styles/Global";
 
 // Constants
 import { Theme } from "../../../constants/Theme";
@@ -31,7 +30,6 @@ export const NumberedSliderStyle = styled.section`
   .${NumberedSliderClassName}{
     &__header {
       display: flex;
-      ${SlideUpInitialStyles}
       
       &__headline {
         max-width: 50%;
@@ -66,10 +64,6 @@ export const NumberedSliderStyle = styled.section`
           will-change: left;
           transition: left .25s ease;
         }
-      }
-
-      &.${animationVisibilityClass} {
-        animation: ${SlideUp} 1s forwards;
       }
     }
 
@@ -121,11 +115,6 @@ export const NumberedSliderStyle = styled.section`
 
   .slick-slide {
     height: inherit !important;
-    ${SlideUpInitialStyles}
-
-    &.slick-current, &.slick-current + .slick-slide {
-      animation: ${SlideUp} 1s forwards;
-    }
 
     > div {
       height: 100%;

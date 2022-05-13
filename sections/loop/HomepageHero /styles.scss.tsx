@@ -13,7 +13,6 @@ import styled from "styled-components";
 import { Root } from "../../../constants/Root";
 import { Palette } from "../../../constants/styles/Color";
 import { CssUtils } from "../../../constants/styles/CssUtils";
-import { animationVisibilityClass, SlideUp, RevealBtn, RevealBtnInitialStyles, SlideUpInitialStyles } from "../../../constants/styles/Global";
 
 // Constants
 import { Theme } from "../../../constants/Theme";
@@ -66,10 +65,6 @@ export const HomepageHeroStyle = styled.section`
         align-items: flex-end;
       }
 
-      h1, &__body, &__svg svg {
-        ${SlideUpInitialStyles}
-      }
-
       &__body, &__btn {
         &.__last-item {
           padding-bottom: calc(${Root.Grid.Section} + calc(${Root.Size} / 2));
@@ -78,52 +73,11 @@ export const HomepageHeroStyle = styled.section`
 
       &__btn {
         align-self: start;
-        ${RevealBtnInitialStyles}
-      }
-
-      &.${animationVisibilityClass} {
-        h1 {
-          animation: ${SlideUp} 1s forwards;
-        }
-
-        .${HomepageHeroClassName} {
-          &__first-section {
-            &__body {
-              animation: ${SlideUp} 1s forwards .25s;
-            }
-
-            &__btn {
-              animation: ${RevealBtn} 1s forwards .5s;
-            }
-
-            &__svg {
-              svg:nth-of-type(1) {
-                animation: ${SlideUp} 1s forwards 0s;
-              }
-              svg:nth-of-type(2) {
-                animation: ${SlideUp} 1s forwards .25s;
-              }
-              svg:nth-of-type(3) {
-                animation: ${SlideUp} 1s forwards .5s;
-              }
-              svg:nth-of-type(4) {
-                animation: ${SlideUp} 1s forwards .75s;
-              }
-              svg:nth-of-type(5) {
-                animation: ${SlideUp} 1s forwards 1s;
-              }
-              svg:nth-of-type(6) {
-                animation: ${SlideUp} 1s forwards 1.25s;
-              }
-            }
-          }
-        }
       }
     }
 
     &__second-section {
       &__headline {
-        ${SlideUpInitialStyles}
         padding: ${Root.Grid.Section} 0;
       }
 
@@ -141,9 +95,10 @@ export const HomepageHeroStyle = styled.section`
 
         svg {
           z-index: 2;
-          transform: skew(0deg) scaleY(0);
+        //  transform: skew(0deg) scaleY(0);
           transform-origin: top left;
           transition: all 2s ease;
+          transform: skew(20deg) scaleY(1);
         }
 
         &:after, &:before {
@@ -166,22 +121,6 @@ export const HomepageHeroStyle = styled.section`
 
         &:before {
          top: -100%;
-        }
-      }
-
-      &.${animationVisibilityClass} {
-        .${HomepageHeroClassName} {
-          &__second-section {
-            &__headline {
-              animation: ${SlideUp} 1s forwards;
-            }
-
-            &__svg {
-              svg {
-                transform: skew(20deg) scaleY(1);
-              }
-            }
-          }
         }
       }
     }

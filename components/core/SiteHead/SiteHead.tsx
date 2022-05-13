@@ -39,7 +39,19 @@ export const SiteHead = ({
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
-      <link rel="stylesheet" href="/fonts.css"></link>
+
+      {/* Fonts */}
+      <link rel="stylesheet" href="https://use.typekit.net/vvl1tlf.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossOrigin={""}
+      />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600&display=swap"
+        rel="stylesheet"
+      />
 
       {/* Favicon */}
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

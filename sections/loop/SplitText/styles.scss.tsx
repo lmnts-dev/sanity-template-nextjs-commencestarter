@@ -6,7 +6,6 @@ import styled from "styled-components";
 import { Root } from "../../../constants/Root";
 import { Color } from "../../../constants/styles/Color";
 import { CssUtils } from "../../../constants/styles/CssUtils";
-import { animationVisibilityClass, RevealDown, RevealDownInitialStyles, SlideUp, SlideUpInitialStyles } from "../../../constants/styles/Global";
 import { Theme } from "../../../constants/Theme";
 
 
@@ -35,7 +34,6 @@ export const SplitTextStyle = styled.section`
       flex: 0 0 60%;
       padding-right: var(--splitTextSpace);
       position: relative;
-      ${SlideUpInitialStyles}
 
       > * {
         position: relative;
@@ -49,7 +47,6 @@ export const SplitTextStyle = styled.section`
           top: 0;
           height: 100%;
           border-right: 1px solid ${Color.varForeground()};
-          ${RevealDownInitialStyles};
         }
       }
 
@@ -88,7 +85,6 @@ export const SplitTextStyle = styled.section`
     &__right {
       flex: 0 0 40%;
       padding-left: var(--splitTextSpace);
-      ${SlideUpInitialStyles}
     }
 
     &__block {
@@ -172,24 +168,6 @@ export const SplitTextStyle = styled.section`
 
   &.__alignment-bottom {
     align-items: flex-end;
-  }
-
-  &.${animationVisibilityClass} {
-    .${SplitTextClassName} {
-      &__left {
-        animation: ${SlideUp} 1s forwards;
-
-        &.__line-vertical {
-          &:after {
-            animation: ${RevealDown} 1s forwards;
-          }
-        }
-      }
-
-      &__right {
-        animation: ${SlideUp} 1s forwards .5s;
-      }
-    }
   }
 
   @media (max-width: ${Theme.Base.Media.Width.Md}) {
