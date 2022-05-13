@@ -46,7 +46,7 @@ import { TextSlider } from "./sections/TextSlider";
 import { AnimatedStats } from "./sections/AnimatedStats";
 import { HomepageHero } from "./sections/HomepageHero";
 import { NumberedSlider } from "./sections/NumberedSlider";
-
+import { FaqListings } from "./sections/FaqListings";
 
 import footer from "./sections/footer";
 import navigation from "./sections/navigation";
@@ -62,7 +62,6 @@ import quiz from "./documents/quiz";
 import answer from "./documents/answer";
 import result from "./documents/result";
 import question from "./documents/question";
-import { FaqListings } from "./sections/FaqListings";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -125,4 +124,3 @@ export default createSchema({
     question,
   ]),
 });
-

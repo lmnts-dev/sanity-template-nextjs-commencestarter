@@ -26,7 +26,7 @@ You can append `?preview` to the landing pages to enable preview mode when you a
 
 ## Running Locally
 
-To run locally, rename `.env.test` to `.env` and add your project ID from [manage.sanity.io](https://manage.sanity.io).
+To run locally, rename `.env.test` to `.env` and add your project ID from [manage.sanity.io](https://manage.sanity.io). Go to manifest.json and sanity.json and update the project ID and dataset. Cd to studio, and sanity deploy, adding the project name when promoted. Save the url this generates and add it to Sanity's settings under 'Custom studio url'
 
 NOTE: If your Vercel project is set up to use the Next.js framework preset, you'll have to go to the project settings under https://vercel.com and under Build & Develpment change the _development command_ to: `npm run dev`
 
