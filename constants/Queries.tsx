@@ -29,7 +29,7 @@ export class Queries {
 
   static internalLinkQuery = `
     "internalLink": internalLink-> {
-      "_type": _type,
+      _type,
       slug,
     },
   `;
@@ -57,75 +57,25 @@ export class Queries {
     "blog_teaser_recent_articles" : {
       "quantity" : recent_articles,
       "articles" : *[_type == "article"] | order(_createdAt asc) [0..10] {
-        "title": title,
-        "slug": slug,
+        title,
+        slug,
         ${Queries.imageQuery}
       },
     },
     "blog_teaser_featured_articles": blog_teaser_featured_articles[]-> {
-      "title": title,
-      "slug": slug,
+      title,
+      slug,
       ${Queries.imageQuery}
     },
   `;
 
   static defaultBlocksQuery = `
-    "body" : body[]{
+    body || blockAdvanced => @ {
       ...,
       "markDefs": markDefs[]{
         ...,
         reference-> {
-          "_type": _type,
-          slug,
-        } 
-      }
-    },
-    "blockArticle" : blockArticle[]{
-      ...,
-      "markDefs": markDefs[]{
-        ...,
-        reference-> {
-          "_type": _type,
-          slug,
-        } 
-      }
-    },
-    "blockBasic" : blockBasic[]{
-      ...,
-      "markDefs": markDefs[]{
-        ...,
-        reference-> {
-          "_type": _type,
-          slug,
-        } 
-      }
-    },
-    "blockStandard" : blockStandard[]{
-      ...,
-      "markDefs": markDefs[]{
-        ...,
-        reference-> {
-          "_type": _type,
-          slug,
-        } 
-      }
-    },
-    "BlockStandardImage" : BlockStandardImage[]{
-      ...,
-      "markDefs": markDefs[]{
-        ...,
-        reference->{
-          "_type": _type,
-          slug,
-        } 
-      }
-    },
-    "BlockAdvanced" : BlockAdvanced[]{
-      ...,
-      "markDefs": markDefs[]{
-        ...,
-        reference->{
-          "_type": _type,
+          _type,
           slug,
         } 
       }
@@ -136,7 +86,9 @@ export class Queries {
     "content" : content[] {
       ...,
       ${Queries.defaultBlocksQuery}
-      ${Queries.blogTeaserQuery}
+      _type == "blogTeaser" => @ {
+        ${Queries.blogTeaserQuery}
+      },
       ${Queries.imageQuery}
       ${Queries.imagesQuery}
       "cta": cta[] {
@@ -188,7 +140,7 @@ export class Queries {
       },
       "textContent": textContent[] {
         ...,
-        "link" : link {
+        "link": link {
           ...,
           ${Queries.internalLinkQuery}
         },
@@ -219,6 +171,12 @@ export class Queries {
    * Articles/Blog
    *
    */
+
+  static AllArticleSlugsForPaths = () => {
+    return groq`*[_type == "article" && defined(slug.current)]{
+      slug
+    }`;
+  };
 
   static CurrentArticle = () => {
     return groq`*[_type == "article" && slug.current == $article][0]{
@@ -279,6 +237,14 @@ export class Queries {
     }`;
   };
 
+  static BlogPage = () => {
+    return groq`*[_id == "blog"][0]{
+      "allArticles": ${Queries.AllArticles()},
+      "allCategories": ${Queries.AllArticleCategories()},
+      ...,
+    }`;
+  };
+
   /**
    *
    * Home Page
@@ -302,7 +268,6 @@ export class Queries {
 
   static CurrentPage = () => {
     return groq`*[_type == "page" && slug.current == $slug][0]{
-      ...,
       ${Queries.loopQuery}
     }`;
   };

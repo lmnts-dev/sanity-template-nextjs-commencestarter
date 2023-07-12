@@ -14,41 +14,40 @@ import { CssToolbar } from "../sections/CssToolbar";
 type CMNC_Page = CMNC_PageData;
 
 const Page: NextPage<CMNC_Page> = ({ pageData, preview, slug }) => {
-  if (pageData) {
-    let { pageTheme, content } = pageData;
-    const router = useRouter();
+  const router = useRouter();
 
-    //@ts-ignore
-    const { data: product = {} } = usePreviewSubscription(
-      Queries.CurrentPage(),
-      {
-        params: { slug: slug },
-        initialData: pageData,
-        enabled: preview || router.query.preview !== null,
-      }
-    );
-
-    let Theme = createTheme(pageTheme);
-
-    return (
-      <>
-        <SiteHead
-          title={Settings.siteTitle}
-          description={Settings.siteDescription}
-        />
-        {Theme && <Theme />}
-
-        <CssToolbar
-          schema={{
-            sectionTheme: "dark",
-          }}
-        />
-
-        <RenderSections sections={content} />
-      </>
-    );
-  } else {
+  if (!router.isFallback && !pageData) {
     return <Error statusCode={404} />;
+  } else {
+    const { data: page } = usePreviewSubscription(Queries.CurrentPage(), {
+      params: { slug: slug },
+      initialData: pageData,
+      enabled: preview || router.query.preview !== null,
+    });
+
+    if (page) {
+      let { pageTheme, content } = page;
+
+      let Theme = createTheme(pageTheme);
+
+      return (
+        <>
+          <SiteHead
+            title={Settings.siteTitle}
+            description={Settings.siteDescription}
+          />
+          {Theme && <Theme />}
+
+          <CssToolbar
+            schema={{
+              sectionTheme: "dark",
+            }}
+          />
+
+          <RenderSections sections={content} />
+        </>
+      );
+    } else return <Error statusCode={404} />;
   }
 };
 

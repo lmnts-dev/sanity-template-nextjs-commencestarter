@@ -23,47 +23,64 @@ import {
 // Constants
 //@ts-ignore
 import Pagination from "react-sanity-pagination";
+import Error from "next/error";
 
 // -- Library
 import { SiteHead } from "../../components/core/SiteHead";
 import { Queries } from "../../constants/Queries";
 import { ArticleListings } from "../../sections/ArticleListings/ArticleListings";
-import { getClient } from "../../utils/sanity";
+import { getClient, usePreviewSubscription } from "../../utils/sanity";
 import RenderSections from "../../components/RenderSections";
 import { Settings } from "../../constants/site/Settings";
+import { useRouter } from "next/router";
 
 // Begin Component
 //////////////////////////////////////////////////////////////////////
 
 export type CMNC_AllArticleListings = {
-  allArticles: CMNC_Article[];
-  allCategories: CMNC_Category[];
-  blogSettings: CMNC_BlogSettings;
+  pageData?: CMNC_BlogSettings & {
+    allArticles: CMNC_Article[];
+    allCategories: CMNC_Category[];
+  };
+  preview: boolean;
 };
 
 const AllArticleListings: NextPage<CMNC_AllArticleListings> = ({
-  allArticles,
-  allCategories,
-  blogSettings,
+  pageData,
+  preview,
 }) => {
-  return (
-    <>
-      <SiteHead
-        title={Settings.siteTitle}
-        description={Settings.siteDescription}
-      />
-      <ArticleListings
-        allCategories={allCategories}
-        articles={allArticles}
-        postsPerPage={blogSettings.postsPerPage}
-        currentCategoryLabel={blogSettings.title}
-      />
+  const router = useRouter();
+  if (!router.isFallback && !pageData) {
+    return <Error statusCode={404} />;
+  } else {
+    const { data: page } = usePreviewSubscription(Queries.BlogPage(), {
+      params: {},
+      initialData: pageData,
+      enabled: preview || router.query.preview !== null,
+    });
 
-      {blogSettings.content && (
-        <RenderSections sections={blogSettings.content} />
-      )}
-    </>
-  );
+    if (page) {
+      let { allArticles, allCategories } = page;
+      return (
+        <>
+          <SiteHead
+            title={Settings.siteTitle}
+            description={Settings.siteDescription}
+          />
+          <ArticleListings
+            allCategories={allCategories}
+            articles={allArticles}
+            postsPerPage={page.postsPerPage}
+            currentCategoryLabel={page.title}
+          />
+
+          {page.content && <RenderSections sections={page.content} />}
+        </>
+      );
+    } else {
+      return <Error statusCode={404} />;
+    }
+  }
 };
 
 /**
@@ -77,12 +94,11 @@ const AllArticleListings: NextPage<CMNC_AllArticleListings> = ({
  *
  */
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   return {
     props: {
-      allArticles: await getClient().fetch(Queries.AllArticles()),
-      allCategories: await getClient().fetch(Queries.AllArticleCategories()),
-      blogSettings: await getClient().fetch(Queries.BlogSettings()),
+      pageData: await getClient().fetch(Queries.BlogPage()),
+      preview,
     },
   };
 };

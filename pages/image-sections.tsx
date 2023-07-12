@@ -36,6 +36,8 @@ const ImageSectionsPage: NextPage<CMNC_ImageSectionsPage> = ({
       }
     );
 
+    console.log(pageData);
+
     let Theme = createTheme(pageTheme);
 
     return (

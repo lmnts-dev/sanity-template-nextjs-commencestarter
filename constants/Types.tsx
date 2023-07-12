@@ -247,12 +247,10 @@ export type CMNC_PageTheme = "tan" | "default" | "dark" | "light";
 
 export type CMNC_PageData = {
   preview: boolean;
-  pageData:
-    | {
-        pageTheme?: CMNC_PageTheme;
-        content: any;
-      }
-    | undefined;
+  pageData?: {
+    pageTheme?: CMNC_PageTheme;
+    content: any;
+  };
   slug: string;
 };
 

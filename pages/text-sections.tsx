@@ -33,6 +33,8 @@ const TextSectionsPage: NextPage<CMNC_TextSectionsPage> = ({
       }
     );
 
+    console.log(pageData);
+
     let Theme = createTheme(pageTheme);
 
     return (
